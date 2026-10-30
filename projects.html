@@ -98,10 +98,6 @@
             </p>
 
             <div class="project-actions-row">
-              <button type="button" class="project-btn-sm" data-open-video="true" data-video-title="Bharatanatyam for Mental Health — Video Preview" data-video-desc="Experiential workshop connecting classical Indian dance and somatic psychology.">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 4px;"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                Watch Video Preview
-              </button>
               <button type="button" class="project-btn-sm" data-open-article="bharatanatyam-somatics">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 4px;"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
                 Read Article: Rhythm &amp; Grounding
@@ -366,7 +362,7 @@
   <div class="take2-modal" id="articleModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalArticleTitle">
     <div class="modal-backdrop"></div>
     <div class="modal-panel">
-      <button type="button" class="modal-close-btn" id="closeModalBtn" aria-label="Close article">✕</button>
+      <button type="button" class="modal-close-btn" id="closeModalBtn" aria-label="Close article">&times;</button>
       <div class="article-modal-header">
         <div class="article-meta">
           <span class="article-category" id="modalArticleCategory">Category</span>
@@ -378,25 +374,12 @@
     </div>
   </div>
 
-  <!-- Video Preview Modal -->
-  <div class="take2-modal" id="videoModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="videoModalTitle">
-    <div class="modal-backdrop"></div>
-    <div class="modal-panel" style="max-width: 720px;">
-      <button type="button" class="modal-close-btn" id="closeVideoModalBtn" aria-label="Close video">✕</button>
-      <div class="article-modal-header">
-        <span class="article-category">Workshop Video Showcase</span>
-        <h2 id="videoModalTitle">Video Preview</h2>
-        <p id="videoModalDesc" style="color: var(--muted); font-size: 14px; margin-top: 4px;"></p>
-      </div>
-      <div id="videoPlayerContent"></div>
-    </div>
-  </div>
 
   <!-- Photo Lightbox Modal -->
   <div class="take2-modal" id="photoLightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="lightboxCaption">
     <div class="modal-backdrop"></div>
     <div class="lightbox-panel">
-      <button type="button" class="modal-close-btn" id="closeLightboxBtn" style="color: var(--sand); background: rgba(255,255,255,0.15);" aria-label="Close lightbox">✕</button>
+      <button type="button" class="modal-close-btn" id="closeLightboxBtn" style="color: var(--sand); background: rgba(255,255,255,0.15);" aria-label="Close lightbox">&times;</button>
       <div class="lightbox-img-stage">
         <img id="lightboxImg" src="" alt="">
       </div>

@@ -76,7 +76,7 @@
             </a>
           </div>
         </div>
-        <figure class="reveal-on-scroll reveal-slide-right" style="margin: 0; background: #FFFFFF; border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 16px; box-shadow: var(--shadow-cozy);">
+        <figure class="reveal-on-scroll reveal-slide-right" style="margin: 0; border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 12px 36px rgba(27, 69, 58, 0.08);">
           <img src="therapy-illustration.png" alt="Two people talking in a welcoming room filled with plants" width="1581" height="995">
         </figure>
       </div>
@@ -217,9 +217,9 @@
       </div>
     </section>
 
-    <!-- My Therapeutic Stance -->
+    <!-- My Therapeutic Stance (Flowing & Unboxed) -->
     <section class="section">
-      <div class="wrap split reveal-on-scroll">
+      <div class="wrap split reveal-on-scroll" style="align-items: start;">
         <div>
           <span class="eyebrow">My Therapeutic Stance</span>
           <h2>I believe healing and growth are collaborative processes.</h2>
@@ -227,9 +227,9 @@
             Together, we make sense of what is happening, understand the patterns underneath it, and explore ways forward that build on your strengths and values.
           </p>
         </div>
-        <div style="background: #FFFFFF; border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 26px; box-shadow: var(--shadow-cozy);">
-          <span class="small-label" style="display: block; margin-bottom: 12px;">My Practice Core Tenets:</span>
-          <ul style="padding-left: 20px; margin: 0; line-height: 1.8; font-size: 14.5px;">
+        <div class="therapeutic-stance-flow">
+          <span class="small-label" style="display: block; margin-bottom: 14px; color: var(--terra); letter-spacing: 0.08em;">My Practice Core Tenets:</span>
+          <ul class="stance-tenets-list">
             <li><strong>Trauma-informed</strong> <em>(safety, choice &amp; agency)</em></li>
             <li><strong>Queer-affirmative</strong> <em>(affirming diverse identities)</em></li>
             <li><strong>Strengths-based</strong> <em>(building on existing resources)</em></li>
@@ -241,48 +241,71 @@
       </div>
     </section>
 
-    <!-- How It Works (5 Steps from Notion) -->
-    <section class="section" id="how-it-works" style="background: #EDF3E7; border-block: 1px solid var(--line);">
+    <!-- How It Works: Vertical Botanical Timeline Flow -->
+    <section class="section therapy-timeline-section" id="how-it-works">
       <div class="wrap">
         <div class="section-head reveal-on-scroll">
           <div>
             <span class="eyebrow">Your First Steps</span>
             <h2>How it works.</h2>
+            <p style="color: var(--muted); font-size: 15px; margin-top: 6px;">A gentle, collaborative rhythm from our first conversation to regular sessions.</p>
           </div>
         </div>
 
-        <div class="process-list reveal-stagger">
-          <div class="process-item">
-            <div>
-              <h3>01 — Tell me a little about what brings you here</h3>
+        <div class="therapy-timeline reveal-stagger">
+          <div class="therapy-timeline-stem" aria-hidden="true"></div>
+
+          <!-- Step 01 -->
+          <div class="timeline-step reveal-on-scroll">
+            <div class="timeline-node">
+              <span class="timeline-num">01</span>
+            </div>
+            <div class="timeline-content">
+              <h3>Tell me a little about what brings you here</h3>
               <p>Fill out the therapy inquiry form and share whatever feels relevant to your current moment.</p>
             </div>
           </div>
 
-          <div class="process-item">
-            <div>
-              <h3>02 — Let’s have a 15-minute introductory call</h3>
-              <p>A short video call to understand what you’re looking for and see if we might be a good fit.</p>
+          <!-- Step 02 -->
+          <div class="timeline-step reveal-on-scroll">
+            <div class="timeline-node">
+              <span class="timeline-num">02</span>
+            </div>
+            <div class="timeline-content">
+              <h3>Let’s have a 15-minute introductory call</h3>
+              <p>A short video call to understand what you’re looking for, feel our communication style, and see if we might be a good fit.</p>
             </div>
           </div>
 
-          <div class="process-item">
-            <div>
-              <h3>03 — Begin with an initial session</h3>
-              <p>We’ll explore what’s happening, what you’d like support with, and what you hope therapy can offer.</p>
+          <!-- Step 03 -->
+          <div class="timeline-step reveal-on-scroll">
+            <div class="timeline-node">
+              <span class="timeline-num">03</span>
+            </div>
+            <div class="timeline-content">
+              <h3>Begin with an initial session</h3>
+              <p>We’ll explore what’s happening, what you’d like support with, and what you hope therapy can offer in an unhurried, safe room.</p>
             </div>
           </div>
 
-          <div class="process-item">
-            <div>
-              <h3>04 — Find a rhythm that works for you</h3>
-              <p>Sessions are usually 50–60 minutes. Frequency can vary depending on your needs and what we’re working on.</p>
+          <!-- Step 04 -->
+          <div class="timeline-step reveal-on-scroll">
+            <div class="timeline-node">
+              <span class="timeline-num">04</span>
+            </div>
+            <div class="timeline-content">
+              <h3>Find a rhythm that works for you</h3>
+              <p>Sessions are usually 50–60 minutes. Frequency can vary depending on your needs, pacing, and what we’re working on.</p>
             </div>
           </div>
 
-          <div class="process-item">
-            <div>
-              <h3>05 — Check in as we go</h3>
+          <!-- Step 05 -->
+          <div class="timeline-step reveal-on-scroll">
+            <div class="timeline-node">
+              <span class="timeline-num">05</span>
+            </div>
+            <div class="timeline-content">
+              <h3>Check in as we go</h3>
               <p>Therapy isn’t a fixed path. We’ll pause periodically to reflect on what’s changing and what feels useful next.</p>
             </div>
           </div>
@@ -510,7 +533,7 @@
   <div class="take2-modal" id="articleModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalArticleTitle">
     <div class="modal-backdrop"></div>
     <div class="modal-panel">
-      <button type="button" class="modal-close-btn" id="closeModalBtn" aria-label="Close article">✕</button>
+      <button type="button" class="modal-close-btn" id="closeModalBtn" aria-label="Close article">&times;</button>
       <div class="article-modal-header">
         <div class="article-meta">
           <span class="article-category" id="modalArticleCategory">Category</span>

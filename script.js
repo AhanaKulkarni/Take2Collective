@@ -516,66 +516,6 @@
     });
   }
 
-  // --- Video Preview Modal ---
-  function initVideoModal() {
-    const videoModal = document.getElementById('videoModal');
-    if (!videoModal) return;
-
-    const closeBtn = document.getElementById('closeVideoModalBtn');
-    const backdrop = videoModal.querySelector('.modal-backdrop');
-    const playerContainer = document.getElementById('videoPlayerContent');
-
-    function openVideo(title, desc) {
-      document.getElementById('videoModalTitle').textContent = title || 'Workshop Video Preview';
-      document.getElementById('videoModalDesc').textContent = desc || 'Take2 Collective Experiential Movement Workshop';
-
-      playerContainer.innerHTML = `
-        <div class="video-mock-stage">
-          <div class="video-overlay-play">
-            <svg viewBox="0 0 64 64" width="64" height="64" fill="currentColor">
-              <circle cx="32" cy="32" r="30" fill="rgba(26, 70, 59, 0.88)"/>
-              <polygon points="26,18 46,32 26,46" fill="#FAF7EE"/>
-            </svg>
-            <span class="video-overlay-text">Video Preview • Bharatanatyam & Somatics in Everyday Life</span>
-            <span class="video-overlay-sub">Filmed at St. Xavier's & Movement Studio Mumbai</span>
-          </div>
-          <img src="project-dance.png" alt="Dance workshop session" class="video-bg-img">
-        </div>
-        <div class="video-notes-box">
-          <p><strong>Workshop Framework:</strong> Experience → Reflection → Psychological Science → Everyday Application. Explores how rhythm (tala) and grounding posture (araimandi) regulate autonomic arousal, transitioning dancers from performance anxiety into mindful somatic agency.</p>
-        </div>
-      `;
-
-      videoModal.classList.add('is-open');
-      videoModal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeVideo() {
-      videoModal.classList.remove('is-open');
-      videoModal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-      playerContainer.innerHTML = '';
-    }
-
-    document.querySelectorAll('[data-open-video]').forEach(btn => {
-      btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        const title = this.getAttribute('data-video-title');
-        const desc = this.getAttribute('data-video-desc');
-        openVideo(title, desc);
-      });
-    });
-
-    if (closeBtn) closeBtn.addEventListener('click', closeVideo);
-    if (backdrop) backdrop.addEventListener('click', closeVideo);
-
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && videoModal.classList.contains('is-open')) {
-        closeVideo();
-      }
-    });
-  }
 
   // --- Photo Lightbox ---
   function initLightbox() {
@@ -631,8 +571,8 @@
 
         if (!emailInput || !emailInput.value.trim()) return;
 
-        const successMsgEn = `✨ Thank you! You’re subscribed to the Take2 newsletter (${edition} edition). Welcome to our monthly pause.`;
-        const successMsgMr = `✨ धन्यवाद! आपण टेक २ च्या मासिक पत्रिकेचे सदस्य झाला आहात (${edition === 'mr' ? 'मराठी आवृत्ती' : 'मासिक आवृत्ती'}).`;
+        const successMsgEn = `Thank you! You’re subscribed to the Take2 newsletter (${edition} edition). Welcome to our monthly pause.`;
+        const successMsgMr = `धन्यवाद! आपण टेक २ च्या मासिक पत्रिकेचे सदस्य झाला आहात (${edition === 'mr' ? 'मराठी आवृत्ती' : 'मासिक आवृत्ती'}).`;
 
         if (msgBox) {
           msgBox.className = 'form-feedback success';
@@ -645,13 +585,14 @@
     });
   }
 
-  // --- Testimonial Carousel ---
+  // --- Testimonial Arrow Slider ---
   function initTestimonialSlider() {
     const carousel = document.querySelector('.testimonial-carousel');
     if (!carousel) return;
 
     const cards = carousel.querySelectorAll('.testimonial-slide');
     const dotsContainer = carousel.querySelector('.carousel-dots');
+    const counterEl = carousel.querySelector('.carousel-counter');
     const prevBtn = carousel.querySelector('.carousel-prev');
     const nextBtn = carousel.querySelector('.carousel-next');
 
@@ -662,8 +603,11 @@
     if (dotsContainer && !dotsContainer.children.length) {
       cards.forEach((_, i) => {
         const dot = document.createElement('button');
+        dot.type = 'button';
         dot.className = `carousel-dot ${i === 0 ? 'active' : ''}`;
-        dot.setAttribute('aria-label', `Slide ${i + 1}`);
+        dot.setAttribute('aria-label', `Testimonial ${i + 1}`);
+        dot.setAttribute('role', 'tab');
+        dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
         dot.addEventListener('click', () => goToSlide(i));
         dotsContainer.appendChild(dot);
       });
@@ -671,11 +615,22 @@
 
     function updateSlides() {
       cards.forEach((card, idx) => {
-        card.classList.toggle('active', idx === currentIndex);
+        const isActive = idx === currentIndex;
+        card.classList.toggle('active', isActive);
+        card.setAttribute('aria-hidden', isActive ? 'false' : 'true');
       });
+
+      if (counterEl) {
+        const currentStr = String(currentIndex + 1).padStart(2, '0');
+        const totalStr = String(cards.length).padStart(2, '0');
+        counterEl.textContent = `${currentStr} / ${totalStr}`;
+      }
+
       if (dotsContainer) {
         Array.from(dotsContainer.children).forEach((dot, idx) => {
-          dot.classList.toggle('active', idx === currentIndex);
+          const isActive = idx === currentIndex;
+          dot.classList.toggle('active', isActive);
+          dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
         });
       }
     }
@@ -685,8 +640,52 @@
       updateSlides();
     }
 
-    if (prevBtn) prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
-    if (nextBtn) nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        goToSlide(currentIndex - 1);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        goToSlide(currentIndex + 1);
+      });
+    }
+
+    // Keyboard navigation
+    carousel.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') {
+        goToSlide(currentIndex - 1);
+      } else if (e.key === 'ArrowRight') {
+        goToSlide(currentIndex + 1);
+      }
+    });
+
+    // Touch swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    carousel.addEventListener('touchstart', function (e) {
+      if (e.changedTouches && e.changedTouches[0]) {
+        touchStartX = e.changedTouches[0].screenX;
+      }
+    }, { passive: true });
+
+    carousel.addEventListener('touchend', function (e) {
+      if (e.changedTouches && e.changedTouches[0]) {
+        touchEndX = e.changedTouches[0].screenX;
+        const threshold = 40;
+        if (touchEndX < touchStartX - threshold) {
+          goToSlide(currentIndex + 1);
+        } else if (touchEndX > touchStartX + threshold) {
+          goToSlide(currentIndex - 1);
+        }
+      }
+    }, { passive: true });
+
+    updateSlides();
   }
 
   // --- Scroll Animations, Progress & Mobile Polish ---
@@ -794,7 +793,6 @@
     initHeroSpaceSwitcher();
     initRegulationToolkit();
     initArticleModal();
-    initVideoModal();
     initLightbox();
     initNewsletterForm();
     initTestimonialSlider();
