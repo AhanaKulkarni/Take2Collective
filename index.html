@@ -25,6 +25,7 @@
       <nav class="desktop-nav" aria-label="Main navigation">
         <a href="index.html" aria-current="page" data-i18n="nav.home">Home</a>
         <a href="therapy.html" data-i18n="nav.therapy">Therapy</a>
+        <a href="aspirants.html" data-i18n="nav.aspirants">Aspirants</a>
         <a href="projects.html" data-i18n="nav.projects">Projects</a>
         <a href="resources.html" data-i18n="nav.resources">Resources</a>
       </nav>
@@ -47,6 +48,7 @@
         <nav aria-label="Mobile navigation">
           <a href="index.html" aria-current="page" data-i18n="nav.home">Home</a>
           <a href="therapy.html" data-i18n="nav.therapy">Therapy</a>
+          <a href="aspirants.html" data-i18n="nav.aspirants">Aspirants</a>
           <a href="projects.html" data-i18n="nav.projects">Projects</a>
           <a href="resources.html" data-i18n="nav.resources">Resources</a>
           <a href="connect.html" data-i18n="nav.connect">Connect</a>
@@ -57,87 +59,162 @@
 
   <main id="main">
     <!-- Hero Section: Creating spaces for intentional living -->
-    <section class="home-hero" aria-labelledby="hero-title">
-      <div class="wrap home-hero-grid">
+    <section class="home-hero" aria-labelledby="hero-title" style="position: relative; overflow: hidden; padding-top: clamp(48px, 6vw, 76px); padding-bottom: clamp(36px, 5vw, 64px);">
+      <!-- Overhead Fairy Lights Garland -->
+      <svg class="fairy-lights-garland" viewBox="0 0 1200 48" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <radialGradient id="heroBulbGlow" cx="50%" cy="40%" r="50%">
+            <stop offset="0%" stop-color="#FFF9D2" />
+            <stop offset="45%" stop-color="#FFE180" />
+            <stop offset="100%" stop-color="#E29E2E" />
+          </radialGradient>
+        </defs>
+        <path class="fairy-light-wire" d="M0,12 Q150,38 300,16 Q450,40 600,16 Q750,40 900,16 Q1050,38 1200,12" />
+        <g class="fairy-bulb" transform="translate(150, 36)"><rect class="fairy-cap" x="-3" y="-3" width="6" height="5" rx="1.5"/><circle class="fairy-bulb-glass" cx="0" cy="7" r="6.5"/></g>
+        <g class="fairy-bulb" transform="translate(300, 16)"><rect class="fairy-cap" x="-3" y="-3" width="6" height="5" rx="1.5"/><circle class="fairy-bulb-glass" cx="0" cy="7" r="6.5"/></g>
+        <g class="fairy-bulb" transform="translate(450, 38)"><rect class="fairy-cap" x="-3" y="-3" width="6" height="5" rx="1.5"/><circle class="fairy-bulb-glass" cx="0" cy="7" r="6.5"/></g>
+        <g class="fairy-bulb" transform="translate(600, 16)"><rect class="fairy-cap" x="-3" y="-3" width="6" height="5" rx="1.5"/><circle class="fairy-bulb-glass" cx="0" cy="7" r="6.5"/></g>
+        <g class="fairy-bulb" transform="translate(750, 38)"><rect class="fairy-cap" x="-3" y="-3" width="6" height="5" rx="1.5"/><circle class="fairy-bulb-glass" cx="0" cy="7" r="6.5"/></g>
+        <g class="fairy-bulb" transform="translate(900, 16)"><rect class="fairy-cap" x="-3" y="-3" width="6" height="5" rx="1.5"/><circle class="fairy-bulb-glass" cx="0" cy="7" r="6.5"/></g>
+        <g class="fairy-bulb" transform="translate(1050, 36)"><rect class="fairy-cap" x="-3" y="-3" width="6" height="5" rx="1.5"/><circle class="fairy-bulb-glass" cx="0" cy="7" r="6.5"/></g>
+      </svg>
+
+      <!-- Corner Botanical Vines -->
+      <svg class="botanical-vine-corner botanical-vine-left" viewBox="0 0 160 200" fill="none" aria-hidden="true">
+        <path d="M0,0 Q60,40 40,110 T20,190" stroke="#1B453A" stroke-width="2.5" opacity="0.6"/>
+        <path d="M15,25 Q35,15 45,30 Q30,42 15,25 Z" fill="#6D8B74" opacity="0.75"/>
+        <path d="M35,60 Q60,50 68,68 Q50,80 35,60 Z" fill="#2E5A44" opacity="0.8"/>
+        <path d="M28,100 Q50,90 55,108 Q40,118 28,100 Z" fill="#6D8B74" opacity="0.75"/>
+        <path d="M38,135 Q60,130 62,148 Q45,155 38,135 Z" fill="#2E5A44" opacity="0.8"/>
+        <path d="M18,165 Q35,160 38,175 Q25,180 18,165 Z" fill="#6D8B74" opacity="0.75"/>
+      </svg>
+      <svg class="botanical-vine-corner botanical-vine-right" viewBox="0 0 160 200" fill="none" aria-hidden="true">
+        <path d="M0,0 Q60,40 40,110 T20,190" stroke="#1B453A" stroke-width="2.5" opacity="0.6"/>
+        <path d="M15,25 Q35,15 45,30 Q30,42 15,25 Z" fill="#6D8B74" opacity="0.75"/>
+        <path d="M35,60 Q60,50 68,68 Q50,80 35,60 Z" fill="#2E5A44" opacity="0.8"/>
+        <path d="M28,100 Q50,90 55,108 Q40,118 28,100 Z" fill="#6D8B74" opacity="0.75"/>
+        <path d="M38,135 Q60,130 62,148 Q45,155 38,135 Z" fill="#2E5A44" opacity="0.8"/>
+        <path d="M18,165 Q35,160 38,175 Q25,180 18,165 Z" fill="#6D8B74" opacity="0.75"/>
+      </svg>
+
+      <div class="wrap home-hero-grid" style="align-items: center; position: relative; z-index: 2;">
         <div class="home-hero-copy reveal-on-scroll">
-          <div class="hero-kicker">
-            <span class="hero-kicker-badge" data-i18n="hero.kicker">Take2 Collective • Psychology for Everyday Life</span>
+          <div class="hero-kicker" style="margin-bottom: 12px;">
+            <span class="hero-kicker-badge" style="background: rgba(223, 234, 214, 0.7); color: var(--moss); font-weight: 700;">
+              Take2 Collective
+            </span>
           </div>
 
-          <h1 id="hero-title" data-i18n="hero.title">
-            Creating spaces for <em>intentional living.</em>
+          <h1 id="hero-title" style="margin-bottom: 6px; font-size: clamp(38px, 4.4vw, 62px); letter-spacing: -0.03em;">
+            Take <span style="color: var(--terra); font-style: italic;">2</span> Collective
           </h1>
 
-          <p class="hero-premise" data-i18n="hero.premise">
-            <strong>Adulting doesn't come with a manual.</strong> We figure out work, relationships, ambition, identity, family, uncertainty, and what comes next, often while we're still figuring ourselves out.
+          <p style="font-family: var(--serif-display); font-style: italic; font-size: clamp(22px, 2.5vw, 32px); color: var(--moss); margin: 0 0 16px; font-weight: 500;">
+            Enabling Intentional Living
           </p>
 
-          <p class="hero-collective-desc" data-i18n="hero.collective">
-            Take2 Collective brings together ideas, practices, people and projects exploring what it means to navigate, understand and build a wholesome adult life.
+          <p class="hero-premise" style="font-size: clamp(16.5px, 1.5vw, 19.5px); color: var(--ink); line-height: 1.6; margin-bottom: 14px; font-weight: 500;">
+            Therapy, shared spaces and thoughtful projects for navigating adult life with more awareness.
           </p>
 
-          <!-- Core Scope Badges -->
-          <div class="hero-pillars-row" aria-label="Take2 Pillars">
-            <span class="pillar-badge" data-i18n="hero.tag.therapy">Personal Therapy</span>
-            <span class="pillar-badge" data-i18n="hero.tag.workshops">Group Circles</span>
-            <span class="pillar-badge" data-i18n="hero.tag.dance">Movement &amp; Somatics</span>
-            <span class="pillar-badge" data-i18n="hero.tag.aspirants">Aspirants &amp; Brain Health</span>
-            <span class="pillar-badge" data-i18n="hero.tag.newsletter">Bilingual Newsletters</span>
+          <div style="display: inline-flex; align-items: center; gap: 8px; font-family: var(--sans); font-size: 13.5px; color: var(--terra); background: rgba(184, 111, 88, 0.08); padding: 6px 16px; border-radius: var(--radius-pill); margin-bottom: 22px;">
+            <span aria-hidden="true">&#9670;</span>
+            <span>Psychological Support rooted in awareness, agency and overall wellbeing</span>
+            <span aria-hidden="true">&#9670;</span>
           </div>
 
           <div class="button-row">
-            <a class="button button-primary" href="#offers-title" data-i18n="hero.btn.spaces">
-              Discover our spaces <span aria-hidden="true">↓</span>
+            <a class="button button-primary" href="#what-we-offer">
+              Explore Our Offerings &rarr;
             </a>
-            <a class="button button-outline" href="connect.html" data-i18n="hero.btn.connect">
-              Start a conversation <span aria-hidden="true">↗</span>
+            <a class="button button-outline" href="therapy.html">
+              Individual Counselling
             </a>
           </div>
         </div>
 
-        <!-- Interactive Collective Sanctuary Showcase -->
+        <!-- Cozy Sanctuary Corner Stage -->
         <div class="hero-sanctuary-stage reveal-on-scroll reveal-slide-right">
-          <div class="sanctuary-card">
-            <div class="sanctuary-header">
-              <span class="sanctuary-badge" id="heroSpaceBadge">The Sanctuary</span>
-              <span class="small-label">Take2 Collective</span>
-            </div>
-
-            <div class="sanctuary-canvas">
-              <img id="heroSpaceImage" class="sanctuary-img" src="take2-house.png" alt="Illustrated Take2 sanctuary building surrounded by plants and warm light" width="650" height="540">
-              <img class="falling-leaf leaf-one" src="falling-leaf.png" alt="" aria-hidden="true">
-              <img class="falling-leaf leaf-two" src="falling-leaf.png" alt="" aria-hidden="true">
-              <img class="falling-leaf leaf-three" src="falling-leaf.png" alt="" aria-hidden="true">
-            </div>
-
-            <!-- Space Switcher Tabs -->
-            <div class="space-switcher-tabs" role="tablist" aria-label="Explore Collective Spaces">
-              <button type="button" class="space-tab-btn active" data-space="house" role="tab" aria-selected="true">The Sanctuary</button>
-              <button type="button" class="space-tab-btn" data-space="workshops" role="tab" aria-selected="false">Group Circles</button>
-              <button type="button" class="space-tab-btn" data-space="movement" role="tab" aria-selected="false">Movement &amp; Research</button>
-              <button type="button" class="space-tab-btn" data-space="resources" role="tab" aria-selected="false">Quiet Library</button>
-              <button type="button" class="space-tab-btn" data-space="therapy" role="tab" aria-selected="false">Therapy Room</button>
-            </div>
-
-            <figcaption class="sanctuary-caption" id="heroSpaceCaption" data-i18n="offers.caption">
-              Take2 is a space to pause, reflect and begin again.
-            </figcaption>
-          </div>
+          <figure style="margin: 0; position: relative; border-radius: var(--radius-soft); overflow: hidden; box-shadow: 0 12px 36px rgba(27, 69, 58, 0.1);">
+            <img src="reflection-nook.png" alt="A soothing, sunlit room with comfortable wooden chairs, indoor plants, warm lamps and books" width="1200" height="800">
+          </figure>
         </div>
+      </div>
+
+      <!-- 5 Offerings Quick Strip (Directly Under Hero) -->
+      <div class="wrap reveal-on-scroll" style="position: relative; z-index: 2;">
+        <nav class="hero-offerings-strip" aria-label="Quick offerings navigation">
+          <a class="offering-strip-item" href="therapy.html">
+            <div class="offering-strip-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 9V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v3"/>
+                <path d="M3 11v5a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H7v-2a2 2 0 0 0-4 0Z"/>
+                <path d="M5 18v2M19 18v2"/>
+              </svg>
+            </div>
+            <span class="offering-strip-title">Individual Counselling</span>
+          </a>
+
+          <a class="offering-strip-item" href="workshops.html">
+            <div class="offering-strip-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <span class="offering-strip-title">Groups &amp; Workshops</span>
+          </a>
+
+          <a class="offering-strip-item" href="projects.html#bharatanatyam">
+            <div class="offering-strip-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="m4.93 4.93 4.24 4.24M14.83 9.17l4.24-4.24M14.83 14.83l4.24 4.24M9.17 14.83l-4.24 4.24"/>
+              </svg>
+            </div>
+            <span class="offering-strip-title">Movement &amp; Wellbeing</span>
+          </a>
+
+          <a class="offering-strip-item" href="projects.html">
+            <div class="offering-strip-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1"/>
+                <path d="M18 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-4"/>
+                <circle cx="8" cy="12" r="2"/>
+              </svg>
+            </div>
+            <span class="offering-strip-title">Community Projects</span>
+          </a>
+
+          <a class="offering-strip-item" href="resources.html">
+            <div class="offering-strip-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+              </svg>
+            </div>
+            <span class="offering-strip-title">Resources &amp; Reflections</span>
+          </a>
+        </nav>
       </div>
     </section>
 
-    <!-- Embedded Philosophy Manifesto Scroll: Innovatively placed, removing the awkward standalone section -->
-    <section class="philosophy-strip" aria-labelledby="philosophy-title">
+    <!-- SECTION 2: PHILOSOPHY -->
+    <section class="philosophy-strip" aria-labelledby="philosophy-title" style="padding: clamp(40px, 5vw, 68px) 0;">
       <div class="wrap">
         <div class="manifesto-box reveal-on-scroll">
           <div class="manifesto-copy">
-            <span class="eyebrow" data-i18n="manifesto.title">The Take Two Approach (Philosophy)</span>
-            <div class="manifesto-lead" data-i18n="manifesto.lead">
-              Figuring life out isn't a one-time process. We grow. Life changes around us. <em>A Take Two isn't about starting over. It's about continuing with greater awareness.</em>
+            <span class="eyebrow">The Take Two Approach</span>
+            <h2 id="philosophy-title" style="font-size: clamp(26px, 2.8vw, 36px); margin: 8px 0 14px;">
+              Figuring life out isn't a one-time process.
+            </h2>
+            <div class="manifesto-lead">
+              We grow. Life changes around us. New experiences ask us to reconsider what we want, what we need, and who we're becoming. <em>A Take Two isn't about starting over. It's about continuing with greater awareness.</em>
             </div>
-            <p data-i18n="manifesto.desc">
-              It’s the space between living automatically and living intentionally — a space to reflect, learn, connect, experiment and choose how we want to live.
+            <p style="margin-top: 14px; font-size: 15px; color: var(--muted); line-height: 1.7;">
+              It's the space between living automatically and living intentionally: a space to reflect, learn, connect, experiment and choose how we want to live.
             </p>
           </div>
 
@@ -146,31 +223,31 @@
               "We pause to reconsider what we want, what we need, and who we are becoming."
             </p>
             <div class="manifesto-pillars-list">
-              <span class="manifesto-pill">Reflect</span>
-              <span class="manifesto-pill">Learn</span>
-              <span class="manifesto-pill">Connect</span>
-              <span class="manifesto-pill">Experiment</span>
-              <span class="manifesto-pill">Choose</span>
+              <span class="manifesto-pill">REFLECT</span>
+              <span class="manifesto-pill">LEARN</span>
+              <span class="manifesto-pill">CONNECT</span>
+              <span class="manifesto-pill">EXPERIMENT</span>
+              <span class="manifesto-pill">CHOOSE</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- What Take2 Offers -->
-    <section class="section illustrated-offers" id="offers-title" aria-labelledby="offers-heading">
+    <!-- SECTION 3: WHAT TAKE2 OFFERS -->
+    <section class="section illustrated-offers" id="what-we-offer" aria-labelledby="offers-heading">
       <div class="wrap">
-        <div class="offers-top reveal-on-scroll">
+        <div class="offers-top reveal-on-scroll" style="margin-bottom: 28px;">
           <div class="offers-intro">
-            <span class="eyebrow" data-i18n="offers.eyebrow">What Take2 Offers</span>
-            <h2 id="offers-heading" data-i18n="offers.title">
+            <span class="eyebrow">What Take2 Offers</span>
+            <h2 id="offers-heading">
               Spaces, experiences and resources for navigating the many dimensions of adult life.
             </h2>
-            <p data-i18n="offers.lead">Four ways to pause, connect and grow.</p>
+            <p class="lead">Four ways to pause, connect and grow.</p>
           </div>
           <figure class="house-stage">
             <img class="house-building" src="take2-house.png" alt="Illustrated Take2 building surrounded by plants" width="500" height="420" loading="lazy">
-            <figcaption data-i18n="offers.caption">Take2 is a space to begin.</figcaption>
+            <figcaption>Take2 is a space to begin.</figcaption>
           </figure>
         </div>
 
@@ -183,25 +260,25 @@
             <div class="offer-story-copy">
               <span class="offer-index">01</span>
               <div>
-                <h3 data-i18n="offers.01.title">Therapy</h3>
-                <p data-i18n="offers.01.desc">Personal spaces for reflection, psychological support and growth.</p>
+                <h3>Therapy</h3>
+                <p>Personal spaces for reflection, psychological support and growth.</p>
               </div>
-              <span class="story-arrow" aria-hidden="true">↗</span>
+              <span class="story-arrow" aria-hidden="true">&rarr;</span>
             </div>
           </a>
 
           <!-- 02 Workshops -->
-          <a class="offer-story workshop-story" href="connect.html">
+          <a class="offer-story workshop-story" href="workshops.html">
             <div class="offer-visual">
               <img src="offer-workshops.png" alt="A small group learning together in a supportive circle" width="1536" height="1024" loading="lazy">
             </div>
             <div class="offer-story-copy">
               <span class="offer-index">02</span>
               <div>
-                <h3 data-i18n="offers.02.title">Workshops &amp; Group Spaces</h3>
-                <p data-i18n="offers.02.desc">Shared spaces to learn, reflect, connect and explore.</p>
+                <h3>Workshops &amp; Group Spaces</h3>
+                <p>Shared spaces to learn, reflect, connect and explore.</p>
               </div>
-              <span class="story-arrow" aria-hidden="true">↗</span>
+              <span class="story-arrow" aria-hidden="true">&rarr;</span>
             </div>
           </a>
 
@@ -213,10 +290,10 @@
             <div class="offer-story-copy">
               <span class="offer-index">03</span>
               <div>
-                <h3 data-i18n="offers.03.title">Projects &amp; Collaborations</h3>
-                <p data-i18n="offers.03.desc">Exploring meaningful questions through psychology, research, creative practice and collaboration.</p>
+                <h3>Projects &amp; Collaborations</h3>
+                <p>Exploring meaningful questions through psychology, research, creative practice and collaboration.</p>
               </div>
-              <span class="story-arrow" aria-hidden="true">↗</span>
+              <span class="story-arrow" aria-hidden="true">&rarr;</span>
             </div>
           </a>
 
@@ -229,307 +306,34 @@
             <div class="offer-story-copy">
               <span class="offer-index">04</span>
               <div>
-                <h3 data-i18n="offers.04.title">Conversations &amp; Resources</h3>
-                <p data-i18n="offers.04.desc">Ideas, stories and perspectives to pause, think and look again.</p>
+                <h3>Conversations &amp; Resources</h3>
+                <p>Ideas, stories and perspectives to pause, think and look again.</p>
               </div>
-              <span class="story-arrow" aria-hidden="true">↗</span>
+              <span class="story-arrow" aria-hidden="true">&rarr;</span>
             </div>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- 5 Segments of Adulting: Unboxed Flow Stream with Botanical Elements -->
-    <section class="section adulting-section" aria-labelledby="adulting-title">
-      <div class="wrap">
-        <div class="centered-heading reveal-on-scroll">
-          <span class="eyebrow" data-i18n="adulting.eyebrow">What We Can Explore Together</span>
-          <h2 id="adulting-title" data-i18n="adulting.title">5 Segments of Adulting</h2>
-        </div>
-        <p class="adulting-philosophy-quote reveal-on-scroll" data-i18n="adulting.note">
-          "These aren't boxes you need to fit into. Our lives rarely come with neatly separated concerns. We can explore what is happening for you in the context of your experiences, relationships, circumstances and aspirations."
-        </p>
-
-        <div class="adulting-flow-stream reveal-stagger">
-          <!-- 01 Wellbeing -->
-          <div class="adulting-aspect">
-            <div class="aspect-header">
-              <span class="aspect-number">01</span>
-              <div class="aspect-botanical-symbol" aria-hidden="true" title="Wellbeing &amp; Rest">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 22v-9"/>
-                  <path d="M12 13a5 5 0 0 0 5-5c0-4-5-6-5-6s-5 2-5 6a5 5 0 0 0 5 5z"/>
-                  <path d="M12 17a4 4 0 0 1 4-4"/>
-                </svg>
-              </div>
-            </div>
-            <h3 data-i18n="adulting.01.name">Wellbeing</h3>
-            <div class="aspect-question" data-i18n="adulting.01.q">How am I actually doing?</div>
-            <p class="aspect-text" data-i18n="adulting.01.desc">
-              Stress · Anxiety · Burnout · Emotional overwhelm · Self-care · Motivation · Performance · Rest
-            </p>
-            <div class="aspect-tags-cloud">
-              <span class="aspect-tag-pill">Burnout</span>
-              <span class="aspect-tag-pill">Somatic Pause</span>
-              <span class="aspect-tag-pill">Rest</span>
-            </div>
-          </div>
-
-          <!-- 02 Identity -->
-          <div class="adulting-aspect">
-            <div class="aspect-header">
-              <span class="aspect-number">02</span>
-              <div class="aspect-botanical-symbol" aria-hidden="true" title="Identity &amp; Agency">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="5"/>
-                  <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-                </svg>
-              </div>
-            </div>
-            <h3 data-i18n="adulting.02.name">Identity</h3>
-            <div class="aspect-question" data-i18n="adulting.02.q">Who am I — and who am I becoming?</div>
-            <p class="aspect-text" data-i18n="adulting.02.desc">
-              Self-worth · Confidence · Values · Beliefs · Purpose · Changing identities · Expectations
-            </p>
-            <div class="aspect-tags-cloud">
-              <span class="aspect-tag-pill">Self-Worth</span>
-              <span class="aspect-tag-pill">Values</span>
-              <span class="aspect-tag-pill">Agency</span>
-            </div>
-          </div>
-
-          <!-- 03 Relationships -->
-          <div class="adulting-aspect">
-            <div class="aspect-header">
-              <span class="aspect-number">03</span>
-              <div class="aspect-botanical-symbol" aria-hidden="true" title="Relationships &amp; Boundaries">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M2 22c1.5-6 6-10 12-10 4 0 8 3 8 8"/>
-                  <path d="M22 2c-1.5 6-6 10-12 10-4 0-8-3-8-8"/>
-                  <circle cx="12" cy="12" r="2.5"/>
-                </svg>
-              </div>
-            </div>
-            <h3 data-i18n="adulting.03.name">Relationships</h3>
-            <div class="aspect-question" data-i18n="adulting.03.q">How do I relate to myself and others?</div>
-            <p class="aspect-text" data-i18n="adulting.03.desc">
-              Family · Friendships · Romantic relationships · Boundaries · Communication · Conflict · Belonging · Expectations
-            </p>
-            <div class="aspect-tags-cloud">
-              <span class="aspect-tag-pill">Boundaries</span>
-              <span class="aspect-tag-pill">Communication</span>
-              <span class="aspect-tag-pill">Safety</span>
-            </div>
-          </div>
-
-          <!-- 04 Transitions -->
-          <div class="adulting-aspect">
-            <div class="aspect-header">
-              <span class="aspect-number">04</span>
-              <div class="aspect-botanical-symbol" aria-hidden="true" title="Transitions &amp; Change">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M2 12c3-4 6-4 9 0s6 4 9 0"/>
-                  <path d="M2 17c3-4 6-4 9 0s6 4 9 0"/>
-                  <path d="M2 7c3-4 6-4 9 0s6 4 9 0"/>
-                </svg>
-              </div>
-            </div>
-            <h3 data-i18n="adulting.04.name">Transitions</h3>
-            <div class="aspect-question" data-i18n="adulting.04.q">What happens when life changes?</div>
-            <p class="aspect-text" data-i18n="adulting.04.desc">
-              College → Work · Exams → Uncertainty · Career changes · Breakups · Setbacks · Relocation · Changing roles · Becoming an adult
-            </p>
-            <div class="aspect-tags-cloud">
-              <span class="aspect-tag-pill">Aspirants</span>
-              <span class="aspect-tag-pill">Career Pivots</span>
-              <span class="aspect-tag-pill">Uncertainty</span>
-            </div>
-          </div>
-
-          <!-- 05 Growth -->
-          <div class="adulting-aspect">
-            <div class="aspect-header">
-              <span class="aspect-number">05</span>
-              <div class="aspect-botanical-symbol" aria-hidden="true" title="Flourishing &amp; Growth">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 22V8"/>
-                  <path d="M12 8C12 4 16 2 19 3c1 3-1 7-5 7"/>
-                  <path d="M12 13c-4-1-6-5-5-8 3 0 7 2 7 6"/>
-                  <path d="M12 17c3-1 5-4 5-6"/>
-                </svg>
-              </div>
-            </div>
-            <h3 data-i18n="adulting.05.name">Growth</h3>
-            <div class="aspect-question" data-i18n="adulting.05.q">What does it mean to build a life that feels like mine?</div>
-            <p class="aspect-text" data-i18n="adulting.05.desc">
-              Meaning · Intentionality · Resilience · Achievement · Choices · Behaviour change · Flourishing
-            </p>
-            <div class="aspect-tags-cloud">
-              <span class="aspect-tag-pill">Resilience</span>
-              <span class="aspect-tag-pill">Intentionality</span>
-              <span class="aspect-tag-pill">Flourishing</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- NEW: Interactive Take2 Regulation Toolkit: 100% Unboxed Flow Stream -->
-    <section class="section toolkit-section" aria-labelledby="toolkit-title">
-      <div class="wrap">
-        <div class="centered-heading reveal-on-scroll">
-          <span class="eyebrow" data-i18n="toolkit.eyebrow">Practical Psychology</span>
-          <h2 id="toolkit-title" data-i18n="toolkit.title">Take2 Regulation Toolkit</h2>
-          <p data-i18n="toolkit.lead">
-            Gentle, somatic and psychological micro-practices you can experience right here in this cozy corner.
-          </p>
-        </div>
-
-        <div class="toolkit-flow-container">
-          <!-- Fluid quick jump chips with smooth scroll -->
-          <div class="toolkit-jump-nav" aria-label="Jump to regulation practice">
-            <a href="#tool-sigh" class="toolkit-jump-chip">Somatic Sigh ↓</a>
-            <a href="#tool-sensory" class="toolkit-jump-chip">5-4-3-2-1 Grounding ↓</a>
-            <a href="#tool-aspirants" class="toolkit-jump-chip">Aspirant Focus Reset ↓</a>
-            <a href="#tool-boundary" class="toolkit-jump-chip">Gentle Boundary Blueprint ↓</a>
-          </div>
-
-          <div class="toolkit-stream">
-            <!-- Practice 01: Somatic Sigh with Animated Pacer -->
-            <article class="toolkit-flow-card reveal-on-scroll" id="tool-sigh">
-              <div class="toolkit-flow-grid">
-                <div class="toolkit-copy">
-                  <div class="toolkit-step-badge">Practice 01 &bull; Autonomous Nervous System Recovery</div>
-                  <h3>The Physiological Somatic Sigh</h3>
-                  <p>
-                    Discovered by neurobiologists, two quick inhales through the nose followed by an extended, unhurried exhale through the mouth is the fastest autonomous way to re-inflate collapsed alveoli and lower sympathetic heart rate.
-                  </p>
-                  <ol class="toolkit-steps-list">
-                    <li>Inhale deeply through your nose.</li>
-                    <li>At the very top, take a second sharp 'top-up' sip of air.</li>
-                    <li>Gently sigh all the air out through your mouth until empty.</li>
-                    <li>Repeat 2 to 3 times whenever you feel hyperarousal.</li>
-                  </ol>
-                </div>
-                <div class="breath-bubble-stage">
-                  <div class="breath-circle">Breathe</div>
-                  <span class="breath-label">Inhale (×2) &bull; Long Exhale</span>
-                </div>
-              </div>
-            </article>
-
-            <!-- Practice 02: 5-4-3-2-1 Sensory Grounding -->
-            <article class="toolkit-flow-card reveal-on-scroll" id="tool-sensory">
-              <div class="toolkit-flow-grid">
-                <div class="toolkit-copy">
-                  <div class="toolkit-step-badge">Practice 02 &bull; Prefrontal Cortex Re-Orientation</div>
-                  <h3>The 5-4-3-2-1 Sensory Orientation</h3>
-                  <p>
-                    When your mind is trapped in catastrophic 'what-ifs', physical sensory input brings your prefrontal cortex back online.
-                  </p>
-                  <ul class="toolkit-steps-list">
-                    <li><strong>5 Things you see:</strong> Look around for colors, shadows, or textures.</li>
-                    <li><strong>4 Things you feel:</strong> Your feet on the floor, the fabric of your chair.</li>
-                    <li><strong>3 Things you hear:</strong> A distant fan, your own breath, outside birds.</li>
-                    <li><strong>2 Things you smell:</strong> Morning coffee, soil, fresh air.</li>
-                    <li><strong>1 Thing you taste:</strong> A sip of water or tea.</li>
-                  </ul>
-                </div>
-                <div class="breath-bubble-stage" style="background: var(--sand-warm);">
-                  <div class="aspect-botanical-symbol" style="width: 52px; height: 52px; margin: 0 auto 10px;" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width: 26px; height: 26px;">
-                      <circle cx="12" cy="12" r="3"/>
-                      <path d="M3 12h3M18 12h3M12 3v3M12 18v3"/>
-                      <circle cx="12" cy="12" r="9" stroke-dasharray="2 2"/>
-                    </svg>
-                  </div>
-                  <p style="margin-top: 6px; font-weight: 700; color: var(--moss); font-size: 14px;">Sensory Presence Check-in</p>
-                  <span style="font-size: 12.5px; color: var(--muted); font-style: italic;">See &bull; Feel &bull; Hear &bull; Smell &bull; Taste</span>
-                </div>
-              </div>
-            </article>
-
-            <!-- Practice 03: Aspirants Reset -->
-            <article class="toolkit-flow-card reveal-on-scroll" id="tool-aspirants">
-              <div class="toolkit-flow-grid">
-                <div class="toolkit-copy">
-                  <div class="toolkit-step-badge">Practice 03 &bull; Cognitive Decoupling for Exam Prep</div>
-                  <h3>The Aspirant Study-Block De-escalation</h3>
-                  <p>
-                    When a difficult mock test or an 8-hour library session triggers shame, comparison, or panic:
-                  </p>
-                  <ul class="toolkit-steps-list">
-                    <li><strong>Label the State:</strong> "This is exam panic speaking, not my ultimate capability."</li>
-                    <li><strong>Uncouple the Test:</strong> A mock score is an analytical diagnostic, not a character judgment.</li>
-                    <li><strong>Step Away Without Guilt:</strong> Take 15 minutes of non-screen movement or hydration.</li>
-                    <li><strong>Return with Compassion:</strong> Tackle 1 bite-sized problem rather than the entire syllabus.</li>
-                  </ul>
-                </div>
-                <div class="breath-bubble-stage" style="background: var(--sand-light);">
-                  <div class="aspect-botanical-symbol" style="width: 52px; height: 52px; margin: 0 auto 10px;" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width: 26px; height: 26px;">
-                      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-                      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-                      <line x1="9" y1="7" x2="15" y2="7"/>
-                      <line x1="9" y1="11" x2="13" y2="11"/>
-                    </svg>
-                  </div>
-                  <p style="margin-top: 6px; font-weight: 700; color: var(--moss); font-size: 14px;">You Are More Than an Exam Score</p>
-                  <span style="font-size: 12.5px; color: var(--muted); font-style: italic;">Diagnostic tool &bull; Not a character verdict</span>
-                </div>
-              </div>
-            </article>
-
-            <!-- Practice 04: Gentle Boundary Script -->
-            <article class="toolkit-flow-card reveal-on-scroll" id="tool-boundary">
-              <div class="toolkit-flow-grid">
-                <div class="toolkit-copy">
-                  <div class="toolkit-step-badge">Practice 04 &bull; Relational Warmth &amp; Agency</div>
-                  <h3>The Warm Boundary Blueprint</h3>
-                  <p>
-                    In Indian family and social structures, setting boundaries feels like cruelty. Practice the door-not-a-wall formula:
-                  </p>
-                  <blockquote style="margin: 12px 0; font-family: var(--serif); font-size: 15px; background: var(--sage); padding: 14px 18px; border-left: 3px solid var(--terra); border-radius: 4px;">
-                    "I love and care about our relationship, but I don’t have the emotional capacity for this conversation right now. Let’s talk about it gently on Sunday afternoon."
-                  </blockquote>
-                  <p style="font-size: 13.5px;">A boundary is a door with a doorbell, not a barbed-wire wall.</p>
-                </div>
-                <div class="breath-bubble-stage" style="background: var(--sage);">
-                  <div class="aspect-botanical-symbol" style="width: 52px; height: 52px; margin: 0 auto 10px;" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width: 26px; height: 26px;">
-                      <path d="M18 20V6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14"/>
-                      <path d="M2 20h20"/>
-                      <circle cx="14" cy="12" r="1.5" fill="currentColor"/>
-                    </svg>
-                  </div>
-                  <p style="margin-top: 6px; font-weight: 700; color: var(--moss); font-size: 14px;">Warmth + Boundaries Together</p>
-                  <span style="font-size: 12.5px; color: var(--muted); font-style: italic;">A door with a doorbell, not a barbed-wire wall</span>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About the Founder: Prachiti's Story from Notion -->
+    <!-- SECTION 4: ABOUT THE FOUNDER -->
     <section class="section founder-section" aria-labelledby="founder-title">
       <div class="wrap founder reveal-on-scroll">
         <div class="founder-photo">
           <img src="prachiti.jpg" alt="Prachiti seated among plants in a warm, sunlit space" width="1280" height="1375" loading="lazy">
         </div>
         <div class="founder-copy">
-          <span class="eyebrow" data-i18n="founder.eyebrow">About the Founder</span>
-          <h2 id="founder-title" data-i18n="founder.title">Hi, I’m Prachiti.</h2>
+          <span class="eyebrow">About the Founder</span>
+          <h2 id="founder-title">Hi, I'm Prachiti.</h2>
           <span class="gold-stroke" aria-hidden="true"></span>
-          <p class="lead" data-i18n="founder.lead">
-            I’m a Counselling Psychologist with a Master’s in Lifespan Counselling from St. Xavier’s College, Mumbai.
+          <p class="lead">
+            I'm a Counselling Psychologist with a Master's in Lifespan Counselling from St. Xavier's College, Mumbai.
           </p>
           <p>
-            My work sits at the intersection of <strong>psychology, everyday life and the questions that come with growing up</strong>—around identity, relationships, ambition, uncertainty, transitions and the choices we make along the way.
+            My work sits at the intersection of <strong>psychology, everyday life and the questions that come with growing up</strong>, around identity, relationships, ambition, uncertainty, transitions and the choices we make along the way.
           </p>
           
-          <div class="founder-threads-box">
+          <div class="founder-threads-box" style="margin: 18px 0; padding: 18px 22px; background: var(--sand-warm); border-left: 3px solid var(--terra); border-radius: 4px;">
             <p style="margin-bottom: 8px;">
               <strong>Take2 grew from a question I keep returning to:</strong><br>
               <em>"How can we navigate adult life with greater awareness, agency and wellbeing?"</em>
@@ -540,21 +344,15 @@
           </div>
 
           <p>
-            I’m interested in making psychological ideas and support more accessible, understandable and relevant to everyday life through therapy, workshops, conversations, projects and collaborations.
+            I'm interested in making psychological ideas and support more accessible, understandable and relevant to everyday life through therapy, workshops, conversations, projects and collaborations.
           </p>
 
-          <div class="cozy-lifestyle-note">
-            <span class="lifestyle-leaf-icon" aria-hidden="true" style="display: inline-flex; vertical-align: -3px; margin-right: 6px; color: var(--terra);">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 22v-9"/>
-                <path d="M12 13a5 5 0 0 0 5-5c0-4-5-6-5-6s-5 2-5 6a5 5 0 0 0 5 5z"/>
-              </svg>
-            </span>
-            <strong>And outside of work:</strong> podcasts, plants and slow mornings with coffee.
+          <div class="cozy-lifestyle-note" style="margin-top: 16px; font-size: 15px; color: var(--moss); background: rgba(223, 234, 214, 0.5); padding: 12px 18px; border-radius: var(--radius-soft);">
+            <strong>Outside of work :</strong> Beyond work, I'm usually catching up on podcasts, spending time around plants or enjoying slow mornings with coffee. Always up for a conversation about interesting ideas and new possibilities!
           </div>
 
           <div style="margin-top: 20px;">
-            <a class="text-link" href="connect.html" data-i18n="founder.link">Connect with Prachiti →</a>
+            <a class="text-link" href="connect.html">Connect with Prachiti &rarr;</a>
           </div>
         </div>
       </div>

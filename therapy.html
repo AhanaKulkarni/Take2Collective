@@ -25,6 +25,7 @@
       <nav class="desktop-nav" aria-label="Main navigation">
         <a href="index.html" data-i18n="nav.home">Home</a>
         <a href="therapy.html" aria-current="page" data-i18n="nav.therapy">Therapy</a>
+        <a href="aspirants.html" data-i18n="nav.aspirants">Aspirants</a>
         <a href="projects.html" data-i18n="nav.projects">Projects</a>
         <a href="resources.html" data-i18n="nav.resources">Resources</a>
       </nav>
@@ -46,6 +47,7 @@
         <nav aria-label="Mobile navigation">
           <a href="index.html" data-i18n="nav.home">Home</a>
           <a href="therapy.html" aria-current="page" data-i18n="nav.therapy">Therapy</a>
+          <a href="aspirants.html" data-i18n="nav.aspirants">Aspirants</a>
           <a href="projects.html" data-i18n="nav.projects">Projects</a>
           <a href="resources.html" data-i18n="nav.resources">Resources</a>
           <a href="connect.html" data-i18n="nav.connect">Connect</a>
@@ -56,163 +58,252 @@
 
   <main id="main">
     <!-- Hero Section -->
-    <section class="page-hero therapy-hero" style="background: var(--sand); border-bottom: 1px solid var(--line); padding: clamp(44px, 5.5vw, 68px) 0;">
-      <div class="wrap therapy-hero-grid" style="display: grid; grid-template-columns: 1.05fr 0.95fr; align-items: center; gap: clamp(28px, 5vw, 64px);">
+    <section class="page-hero therapy-hero" style="background: var(--sand); border-bottom: 1px solid var(--line); padding: clamp(48px, 6vw, 76px) 0; position: relative; overflow: hidden;">
+      <!-- Overhead Fairy Lights Garland -->
+      <svg class="fairy-lights-garland" viewBox="0 0 1200 48" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <radialGradient id="therapyBulbGlow" cx="50%" cy="40%" r="50%">
+            <stop offset="0%" stop-color="#FFF9D2" />
+            <stop offset="45%" stop-color="#FFE180" />
+            <stop offset="100%" stop-color="#E29E2E" />
+          </radialGradient>
+        </defs>
+        <path class="fairy-light-wire" d="M0,12 Q150,38 300,16 Q450,40 600,16 Q750,40 900,16 Q1050,38 1200,12" />
+        <g class="fairy-bulb" transform="translate(150, 36)"><rect class="fairy-cap" x="-3" y="-3" width="6" height="5" rx="1.5"/><circle class="fairy-bulb-glass" cx="0" cy="7" r="6.5"/></g>
+        <g class="fairy-bulb" transform="translate(300, 16)"><rect class="fairy-cap" x="-3" y="-3" width="6" height="5" rx="1.5"/><circle class="fairy-bulb-glass" cx="0" cy="7" r="6.5"/></g>
+        <g class="fairy-bulb" transform="translate(450, 38)"><rect class="fairy-cap" x="-3" y="-3" width="6" height="5" rx="1.5"/><circle class="fairy-bulb-glass" cx="0" cy="7" r="6.5"/></g>
+        <g class="fairy-bulb" transform="translate(600, 16)"><rect class="fairy-cap" x="-3" y="-3" width="6" height="5" rx="1.5"/><circle class="fairy-bulb-glass" cx="0" cy="7" r="6.5"/></g>
+        <g class="fairy-bulb" transform="translate(750, 38)"><rect class="fairy-cap" x="-3" y="-3" width="6" height="5" rx="1.5"/><circle class="fairy-bulb-glass" cx="0" cy="7" r="6.5"/></g>
+        <g class="fairy-bulb" transform="translate(900, 16)"><rect class="fairy-cap" x="-3" y="-3" width="6" height="5" rx="1.5"/><circle class="fairy-bulb-glass" cx="0" cy="7" r="6.5"/></g>
+        <g class="fairy-bulb" transform="translate(1050, 36)"><rect class="fairy-cap" x="-3" y="-3" width="6" height="5" rx="1.5"/><circle class="fairy-bulb-glass" cx="0" cy="7" r="6.5"/></g>
+      </svg>
+
+      <!-- Corner Botanical Vines -->
+      <svg class="botanical-vine-corner botanical-vine-left" viewBox="0 0 160 200" fill="none" aria-hidden="true">
+        <path d="M0,0 Q60,40 40,110 T20,190" stroke="#1B453A" stroke-width="2.5" opacity="0.6"/>
+        <path d="M15,25 Q35,15 45,30 Q30,42 15,25 Z" fill="#6D8B74" opacity="0.75"/>
+        <path d="M35,60 Q60,50 68,68 Q50,80 35,60 Z" fill="#2E5A44" opacity="0.8"/>
+        <path d="M28,100 Q50,90 55,108 Q40,118 28,100 Z" fill="#6D8B74" opacity="0.75"/>
+        <path d="M38,135 Q60,130 62,148 Q45,155 38,135 Z" fill="#2E5A44" opacity="0.8"/>
+        <path d="M18,165 Q35,160 38,175 Q25,180 18,165 Z" fill="#6D8B74" opacity="0.75"/>
+      </svg>
+      <svg class="botanical-vine-corner botanical-vine-right" viewBox="0 0 160 200" fill="none" aria-hidden="true">
+        <path d="M0,0 Q60,40 40,110 T20,190" stroke="#1B453A" stroke-width="2.5" opacity="0.6"/>
+        <path d="M15,25 Q35,15 45,30 Q30,42 15,25 Z" fill="#6D8B74" opacity="0.75"/>
+        <path d="M35,60 Q60,50 68,68 Q50,80 35,60 Z" fill="#2E5A44" opacity="0.8"/>
+        <path d="M28,100 Q50,90 55,108 Q40,118 28,100 Z" fill="#6D8B74" opacity="0.75"/>
+        <path d="M38,135 Q60,130 62,148 Q45,155 38,135 Z" fill="#2E5A44" opacity="0.8"/>
+        <path d="M18,165 Q35,160 38,175 Q25,180 18,165 Z" fill="#6D8B74" opacity="0.75"/>
+      </svg>
+
+      <div class="wrap therapy-hero-grid" style="display: grid; grid-template-columns: 1.05fr 0.95fr; align-items: center; gap: clamp(28px, 5vw, 64px); position: relative; z-index: 2;">
         <div class="therapy-hero-copy reveal-on-scroll">
           <span class="eyebrow">Therapy with Prachiti</span>
-          <h1 style="font-size: clamp(38px, 4.5vw, 62px); margin: 14px 0 16px;">A space to explore, understand &amp; process.</h1>
+          <h1 style="font-size: clamp(38px, 4.5vw, 62px); margin: 14px 0 16px;">
+            A space to explore, understand &amp; <span style="border-bottom: 3px solid var(--terra); padding-bottom: 2px;">process.</span>
+          </h1>
           <p class="lead" style="margin-bottom: 14px;">
             Therapy can begin with a problem, a question, a transition or simply a feeling that something isn't quite right.
           </p>
           <p style="font-size: 15px; color: var(--muted); margin-bottom: 20px;">
             It can be a space to slow down, make sense of what you're experiencing, understand yourself better, and explore what you want to do next. <strong>You don't need to have everything figured out before you begin.</strong>
           </p>
+
           <div class="button-row">
             <a class="button button-primary" href="https://forms.gle/K35eiPrayfF6hj1S9" target="_blank" rel="noopener noreferrer">
-              Book your introductory session <span aria-hidden="true">↗</span>
+              Book your introductory session <span aria-hidden="true">&rarr;</span>
             </a>
             <a class="button button-outline" href="#how-it-works">
-              How it works <span aria-hidden="true">↓</span>
+              How it works <span aria-hidden="true">&darr;</span>
             </a>
           </div>
+
+          <!-- Location & Format Badges (from Mockup) -->
+          <div style="display: flex; gap: 12px; margin-top: 22px; flex-wrap: wrap;">
+            <span style="background: rgba(27,69,58,0.08); padding: 7px 16px; border-radius: var(--radius-pill); font-size: 13px; font-weight: 600; color: var(--moss); display: inline-flex; align-items: center; gap: 6px;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              In-person (Mumbai)
+            </span>
+            <span style="background: rgba(184,111,88,0.09); padding: 7px 16px; border-radius: var(--radius-pill); font-size: 13px; font-weight: 600; color: var(--terra); display: inline-flex; align-items: center; gap: 6px;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              Online (Pan India + Global NRI / Indian Diaspora)
+            </span>
+          </div>
         </div>
-        <figure class="reveal-on-scroll reveal-slide-right" style="margin: 0; border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 12px 36px rgba(27, 69, 58, 0.08);">
-          <img src="therapy-illustration.png" alt="Two people talking in a welcoming room filled with plants" width="1581" height="995">
+        <figure class="reveal-on-scroll reveal-slide-right" style="margin: 0; border-radius: var(--radius-soft); overflow: hidden; box-shadow: 0 12px 36px rgba(27, 69, 58, 0.08);">
+          <img src="therapy-illustration.png" alt="Two people talking in a welcoming room filled with plants and warm light" width="1581" height="995">
         </figure>
       </div>
     </section>
 
-    <!-- What We Can Explore Together (The 5 Segments of Adulting: 100% Unboxed) -->
-    <section class="section adulting-section">
+    <!-- Concerns We Can Work With (5 Arched Illustrated Cards from Mockup) -->
+    <section class="section concerns-section" id="concerns-we-work-with">
       <div class="wrap">
         <div class="centered-heading reveal-on-scroll">
           <span class="eyebrow">Therapeutic Focus</span>
-          <h2>What we can explore together.</h2>
+          <h2>Concerns we can work with.</h2>
+          <p style="margin-top: 8px;">
+            Support for a range of emotional, relational and life concerns &mdash; in the context of who you are, what you're experiencing, and what you're moving towards.
+          </p>
         </div>
-        <p class="adulting-philosophy-quote reveal-on-scroll">
-          "These aren't boxes you need to fit into. Our lives rarely come with neatly separated concerns. We can explore what is happening for you in the context of your experiences, relationships, circumstances and aspirations."
-        </p>
 
-        <div class="adulting-flow-stream reveal-stagger">
+        <div class="concerns-cards-row reveal-stagger">
           <!-- 01 Wellbeing -->
-          <div class="adulting-aspect">
-            <div class="aspect-header">
-              <span class="aspect-number">01</span>
-              <div class="aspect-botanical-symbol" aria-hidden="true" title="Wellbeing &amp; Rest">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 22v-9"/>
-                  <path d="M12 13a5 5 0 0 0 5-5c0-4-5-6-5-6s-5 2-5 6a5 5 0 0 0 5 5z"/>
-                  <path d="M12 17a4 4 0 0 1 4-4"/>
-                </svg>
-              </div>
+          <article class="concern-arch-card reveal-on-scroll" data-open-article="pause-regulation" title="Click to read short insight">
+            <div class="concern-arch-illustration" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22v-9"/>
+                <path d="M12 13a5 5 0 0 0 5-5c0-4-5-6-5-6s-5 2-5 6a5 5 0 0 0 5 5z"/>
+                <path d="M12 17a4 4 0 0 1 4-4"/>
+              </svg>
             </div>
-            <h3>Wellbeing</h3>
-            <div class="aspect-question">How am I actually doing?</div>
-            <p class="aspect-text">
-              Stress · Anxiety · Burnout · Emotional overwhelm · Self-care · Motivation · Performance · Rest
-            </p>
-            <div class="aspect-tags-cloud">
-              <span class="aspect-tag-pill">Burnout</span>
-              <span class="aspect-tag-pill">Nervous System</span>
-              <span class="aspect-tag-pill">Rest</span>
-            </div>
-          </div>
+            <h3 class="concern-arch-title">Wellbeing</h3>
+            <ul class="concern-bullet-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span>Anxiety &amp; overthinking</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span>Burnout &amp; exhaustion</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span>Emotional overwhelm</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span>Self-care &amp; rest</span>
+              </li>
+            </ul>
+          </article>
 
           <!-- 02 Identity -->
-          <div class="adulting-aspect">
-            <div class="aspect-header">
-              <span class="aspect-number">02</span>
-              <div class="aspect-botanical-symbol" aria-hidden="true" title="Identity &amp; Values">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="5"/>
-                  <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-                </svg>
-              </div>
+          <article class="concern-arch-card reveal-on-scroll" data-open-article="aspirants-silent-grief" title="Click to read short insight">
+            <div class="concern-arch-illustration" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"/>
+                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+              </svg>
             </div>
-            <h3>Identity</h3>
-            <div class="aspect-question">Who am I — and who am I becoming?</div>
-            <p class="aspect-text">
-              Self-worth · Confidence · Values · Beliefs · Purpose · Changing identities · Expectations
-            </p>
-            <div class="aspect-tags-cloud">
-              <span class="aspect-tag-pill">Self-Worth</span>
-              <span class="aspect-tag-pill">Values</span>
-              <span class="aspect-tag-pill">Agency</span>
-            </div>
-          </div>
+            <h3 class="concern-arch-title">Identity</h3>
+            <ul class="concern-bullet-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span>Self-worth &amp; confidence</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span>Values &amp; purpose</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span>Changing identities &amp; life roles</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span>Self-acceptance</span>
+              </li>
+            </ul>
+          </article>
 
           <!-- 03 Relationships -->
-          <div class="adulting-aspect">
-            <div class="aspect-header">
-              <span class="aspect-number">03</span>
-              <div class="aspect-botanical-symbol" aria-hidden="true" title="Relationships &amp; Boundaries">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M2 22c1.5-6 6-10 12-10 4 0 8 3 8 8"/>
-                  <path d="M22 2c-1.5 6-6 10-12 10-4 0-8-3-8-8"/>
-                  <circle cx="12" cy="12" r="2.5"/>
-                </svg>
-              </div>
+          <article class="concern-arch-card reveal-on-scroll" data-open-article="boundaries-guilt" title="Click to read short insight">
+            <div class="concern-arch-illustration" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
             </div>
-            <h3>Relationships</h3>
-            <div class="aspect-question">How do I relate to myself and others?</div>
-            <p class="aspect-text">
-              Family · Friendships · Romantic relationships · Boundaries · Communication · Conflict · Belonging · Expectations
-            </p>
-            <div class="aspect-tags-cloud">
-              <span class="aspect-tag-pill">Boundaries</span>
-              <span class="aspect-tag-pill">Communication</span>
-              <span class="aspect-tag-pill">Safety</span>
-            </div>
-          </div>
+            <h3 class="concern-arch-title">Relationships</h3>
+            <ul class="concern-bullet-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span>Relationship issues</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span>Romantic relationships</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span>Family dynamics</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span>Boundaries &amp; communication</span>
+              </li>
+            </ul>
+          </article>
 
           <!-- 04 Transitions -->
-          <div class="adulting-aspect">
-            <div class="aspect-header">
-              <span class="aspect-number">04</span>
-              <div class="aspect-botanical-symbol" aria-hidden="true" title="Transitions &amp; Changes">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M2 12c3-4 6-4 9 0s6 4 9 0"/>
-                  <path d="M2 17c3-4 6-4 9 0s6 4 9 0"/>
-                  <path d="M2 7c3-4 6-4 9 0s6 4 9 0"/>
-                </svg>
-              </div>
+          <article class="concern-arch-card reveal-on-scroll" data-open-article="aspirants-silent-grief" title="Click to read short insight">
+            <div class="concern-arch-illustration" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 12c3-4 6-4 9 0s6 4 9 0"/>
+                <path d="M2 17c3-4 6-4 9 0s6 4 9 0"/>
+                <path d="M2 7c3-4 6-4 9 0s6 4 9 0"/>
+              </svg>
             </div>
-            <h3>Transitions</h3>
-            <div class="aspect-question">What happens when life changes?</div>
-            <p class="aspect-text">
-              College → Work · Exams → Uncertainty · Career changes · Breakups · Setbacks · Relocation · Changing roles · Becoming an adult
-            </p>
-            <div class="aspect-tags-cloud">
-              <span class="aspect-tag-pill">Aspirants</span>
-              <span class="aspect-tag-pill">Career Shifts</span>
-              <span class="aspect-tag-pill">Uncertainty</span>
-            </div>
-          </div>
+            <h3 class="concern-arch-title">Transitions</h3>
+            <ul class="concern-bullet-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span>Academic &amp; career stress</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span>Life changes (e.g. relocation)</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span>Uncertainty &amp; decisions</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span>Adjusting to adulthood</span>
+              </li>
+            </ul>
+          </article>
 
           <!-- 05 Growth -->
-          <div class="adulting-aspect">
-            <div class="aspect-header">
-              <span class="aspect-number">05</span>
-              <div class="aspect-botanical-symbol" aria-hidden="true" title="Growth &amp; Flourishing">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 22V8"/>
-                  <path d="M12 8C12 4 16 2 19 3c1 3-1 7-5 7"/>
-                  <path d="M12 13c-4-1-6-5-5-8 3 0 7 2 7 6"/>
-                  <path d="M12 17c3-1 5-4 5-6"/>
-                </svg>
-              </div>
+          <article class="concern-arch-card reveal-on-scroll" data-open-article="bharatanatyam-somatics" title="Click to read short insight">
+            <div class="concern-arch-illustration" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22V8"/>
+                <path d="M12 8C12 4 16 2 19 3c1 3-1 7-5 7"/>
+                <path d="M12 13c-4-1-6-5-5-8 3 0 7 2 7 6"/>
+                <path d="M12 17c3-1 5-4 5-6"/>
+              </svg>
             </div>
-            <h3>Growth</h3>
-            <div class="aspect-question">What does it mean to build a life that feels like mine?</div>
-            <p class="aspect-text">
-              Meaning · Intentionality · Resilience · Achievement · Choices · Behaviour change · Flourishing
-            </p>
-            <div class="aspect-tags-cloud">
-              <span class="aspect-tag-pill">Resilience</span>
-              <span class="aspect-tag-pill">Intentionality</span>
-              <span class="aspect-tag-pill">Flourishing</span>
-            </div>
-          </div>
+            <h3 class="concern-arch-title">Growth</h3>
+            <ul class="concern-bullet-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span>Performance &amp; exams</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span>Goal clarity &amp; focus</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span>Resilience &amp; adaptability</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span>Meaning &amp; flourishing</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+
+        <div style="text-align: center; margin-top: 36px;">
+          <a class="button button-primary" href="https://forms.gle/K35eiPrayfF6hj1S9" target="_blank" rel="noopener noreferrer">
+            Explore Therapy with Us &rarr;
+          </a>
         </div>
       </div>
     </section>
@@ -313,59 +404,156 @@
       </div>
     </section>
 
-    <!-- Curated Blog Articles on Therapy & Adulting -->
+    <!-- Thoughts of the Therapist (Client Feedback Requirement) -->
     <section class="section journal-section">
       <div class="wrap">
-        <div class="section-head">
+        <div class="section-head reveal-on-scroll">
           <div>
-            <span class="eyebrow">Essays &amp; Therapy Notes</span>
-            <h2>Writings on the Therapy Space</h2>
+            <span class="eyebrow">Perspectives &amp; Reflections</span>
+            <h2>Thoughts of the Therapist</h2>
           </div>
           <p class="lead" style="max-width: 440px;">
             Short essays to demystify therapy, nervous system regulation, boundaries, and lifespan development.
           </p>
         </div>
 
-        <div class="articles-grid">
-          <article class="article-card">
+        <div class="articles-grid reveal-stagger">
+          <article class="article-card reveal-on-scroll">
             <div class="article-meta">
               <span class="article-category">Nervous System</span>
               <span>4 min read</span>
             </div>
             <h3>De-stigmatizing the Pause: Why Nervous System Rest Precedes Action</h3>
             <p>Why we treat rest as an earned reward rather than a biological requirement, and how polyvagal grounding restores perspective.</p>
-            <button type="button" class="article-read-btn" data-open-article="pause-regulation">Read Essay →</button>
+            <button type="button" class="article-read-btn" data-open-article="pause-regulation">Read Essay &rarr;</button>
           </article>
 
-          <article class="article-card">
+          <article class="article-card reveal-on-scroll">
             <div class="article-meta">
               <span class="article-category">Therapy Demystified</span>
               <span>3 min read</span>
             </div>
             <h3>What Really Happens in a First Therapy Session?</h3>
             <p>From the initial 15-minute introductory call to mapping what feels heavy without pressure or interrogation.</p>
-            <button type="button" class="article-read-btn" data-open-article="first-session">Read Essay →</button>
+            <button type="button" class="article-read-btn" data-open-article="first-session">Read Essay &rarr;</button>
           </article>
 
-          <article class="article-card">
+          <article class="article-card reveal-on-scroll">
             <div class="article-meta">
               <span class="article-category">Relationships</span>
               <span>4 min read</span>
             </div>
             <h3>When Boundaries Feel Like Guilt: Relearning Emotional Safety</h3>
             <p>How collectivistic family conditioning turns boundaries into perceived cruelty, and how to set gentle doors instead of walls.</p>
-            <button type="button" class="article-read-btn" data-open-article="boundaries-guilt">Read Essay →</button>
+            <button type="button" class="article-read-btn" data-open-article="boundaries-guilt">Read Essay &rarr;</button>
           </article>
 
-          <article class="article-card">
+          <article class="article-card reveal-on-scroll">
             <div class="article-meta">
               <span class="article-category">Lifespan Perspective</span>
               <span>5 min read</span>
             </div>
             <h3>The Myth of Having It All Together by 25</h3>
             <p>Navigating Emerging Adulthood, career experimentation, and the dense foundational middle of becoming.</p>
-            <button type="button" class="article-read-btn" data-open-article="myth-together-25">Read Essay →</button>
+            <button type="button" class="article-read-btn" data-open-article="myth-together-25">Read Essay &rarr;</button>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section: Arrow-Based Testimonial Box Slider (Added on Therapy Page per Brief) -->
+    <section class="section testimonials-section" aria-labelledby="therapy-testimonials-title">
+      <div class="wrap">
+        <div class="centered-heading reveal-on-scroll">
+          <span class="eyebrow">Client Reflections</span>
+          <h2 id="therapy-testimonials-title">Experiences in the Therapy Space</h2>
+          <p>Reflections from clients who have navigated personal transitions, burnout, identity and relationships (anonymized).</p>
+        </div>
+
+        <div class="testimonial-slider-wrapper reveal-on-scroll">
+          <div class="testimonial-carousel" role="region" aria-label="Therapy Testimonials">
+            <!-- Testimonial 01 -->
+            <article class="testimonial-slide active" role="group" aria-roledescription="slide" aria-label="1 of 3">
+              <div class="testimonial-quote-mark" aria-hidden="true">&ldquo;</div>
+              <p class="testimonial-quote">
+                Prachiti’s space never felt clinical or intimidating. For the first time in years of high-pressure work, I felt permitted to unpack my anxiety and burnout without feeling broken. It is a genuine relief to be met with so much gentle warmth.
+              </p>
+              <div class="testimonial-author-row">
+                <span class="author-avatar-badge" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="4"/>
+                    <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
+                  </svg>
+                </span>
+                <div>
+                  <div class="author-name">Anonymous</div>
+                  <div class="author-context">Individual Therapy Client &bull; Tech Professional (Age 27)</div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Testimonial 02 -->
+            <article class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="2 of 3">
+              <div class="testimonial-quote-mark" aria-hidden="true">&ldquo;</div>
+              <p class="testimonial-quote">
+                Therapy with Prachiti helped me name patterns in my family relationships that I had carried for a decade. The sessions gave me practical tools to set gentle boundaries without drowning in guilt.
+              </p>
+              <div class="testimonial-author-row">
+                <span class="author-avatar-badge" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="4"/>
+                    <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
+                  </svg>
+                </span>
+                <div>
+                  <div class="author-name">Anonymous</div>
+                  <div class="author-context">Individual Therapy Client &bull; Mumbai (Age 29)</div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Testimonial 03 -->
+            <article class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="3 of 3">
+              <div class="testimonial-quote-mark" aria-hidden="true">&ldquo;</div>
+              <p class="testimonial-quote">
+                The Take2 space gave words to the lonely shame of gap years. It helped me rebuild a sustainable study rhythm while holding onto my self-worth beyond mock exam percentiles. The reduced fees made therapy genuinely accessible when I needed it most.
+              </p>
+              <div class="testimonial-author-row">
+                <span class="author-avatar-badge" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="4"/>
+                    <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
+                  </svg>
+                </span>
+                <div>
+                  <div class="author-name">Anonymous</div>
+                  <div class="author-context">Competitive Exam Aspirant &bull; UPSC Journey (Age 25)</div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Arrow Navigation Controls -->
+            <div class="testimonial-nav-bar">
+              <button type="button" class="carousel-arrow carousel-prev" aria-label="Previous testimonial">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="19" y1="12" x2="5" y2="12"></line>
+                  <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+              </button>
+
+              <div class="carousel-progress-group">
+                <span class="carousel-counter" aria-live="polite">01 / 03</span>
+                <div class="carousel-dots" role="tablist" aria-label="Choose testimonial"></div>
+              </div>
+
+              <button type="button" class="carousel-arrow carousel-next" aria-label="Next testimonial">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>

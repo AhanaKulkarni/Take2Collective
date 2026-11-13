@@ -587,105 +587,196 @@
 
   // --- Testimonial Arrow Slider ---
   function initTestimonialSlider() {
-    const carousel = document.querySelector('.testimonial-carousel');
-    if (!carousel) return;
+    const carousels = document.querySelectorAll('.testimonial-carousel');
+    if (!carousels.length) return;
 
-    const cards = carousel.querySelectorAll('.testimonial-slide');
-    const dotsContainer = carousel.querySelector('.carousel-dots');
-    const counterEl = carousel.querySelector('.carousel-counter');
-    const prevBtn = carousel.querySelector('.carousel-prev');
-    const nextBtn = carousel.querySelector('.carousel-next');
+    carousels.forEach(carousel => {
+      const cards = carousel.querySelectorAll('.testimonial-slide');
+      const dotsContainer = carousel.querySelector('.carousel-dots');
+      const counterEl = carousel.querySelector('.carousel-counter');
+      const prevBtn = carousel.querySelector('.carousel-prev');
+      const nextBtn = carousel.querySelector('.carousel-next');
 
-    if (!cards.length) return;
+      if (!cards.length) return;
 
-    let currentIndex = 0;
+      let currentIndex = 0;
 
-    if (dotsContainer && !dotsContainer.children.length) {
-      cards.forEach((_, i) => {
-        const dot = document.createElement('button');
-        dot.type = 'button';
-        dot.className = `carousel-dot ${i === 0 ? 'active' : ''}`;
-        dot.setAttribute('aria-label', `Testimonial ${i + 1}`);
-        dot.setAttribute('role', 'tab');
-        dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
-        dot.addEventListener('click', () => goToSlide(i));
-        dotsContainer.appendChild(dot);
-      });
-    }
-
-    function updateSlides() {
-      cards.forEach((card, idx) => {
-        const isActive = idx === currentIndex;
-        card.classList.toggle('active', isActive);
-        card.setAttribute('aria-hidden', isActive ? 'false' : 'true');
-      });
-
-      if (counterEl) {
-        const currentStr = String(currentIndex + 1).padStart(2, '0');
-        const totalStr = String(cards.length).padStart(2, '0');
-        counterEl.textContent = `${currentStr} / ${totalStr}`;
-      }
-
-      if (dotsContainer) {
-        Array.from(dotsContainer.children).forEach((dot, idx) => {
-          const isActive = idx === currentIndex;
-          dot.classList.toggle('active', isActive);
-          dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      if (dotsContainer && !dotsContainer.children.length) {
+        cards.forEach((_, i) => {
+          const dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = `carousel-dot ${i === 0 ? 'active' : ''}`;
+          dot.setAttribute('aria-label', `Testimonial ${i + 1}`);
+          dot.setAttribute('role', 'tab');
+          dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+          dot.addEventListener('click', () => goToSlide(i));
+          dotsContainer.appendChild(dot);
         });
       }
-    }
 
-    function goToSlide(index) {
-      currentIndex = (index + cards.length) % cards.length;
-      updateSlides();
-    }
+      function updateSlides() {
+        cards.forEach((card, idx) => {
+          const isActive = idx === currentIndex;
+          card.classList.toggle('active', isActive);
+          card.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+        });
 
-    if (prevBtn) {
-      prevBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-        goToSlide(currentIndex - 1);
-      });
-    }
+        if (counterEl) {
+          const currentStr = String(currentIndex + 1).padStart(2, '0');
+          const totalStr = String(cards.length).padStart(2, '0');
+          counterEl.textContent = `${currentStr} / ${totalStr}`;
+        }
 
-    if (nextBtn) {
-      nextBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-        goToSlide(currentIndex + 1);
-      });
-    }
-
-    // Keyboard navigation
-    carousel.addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowLeft') {
-        goToSlide(currentIndex - 1);
-      } else if (e.key === 'ArrowRight') {
-        goToSlide(currentIndex + 1);
-      }
-    });
-
-    // Touch swipe support for mobile
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    carousel.addEventListener('touchstart', function (e) {
-      if (e.changedTouches && e.changedTouches[0]) {
-        touchStartX = e.changedTouches[0].screenX;
-      }
-    }, { passive: true });
-
-    carousel.addEventListener('touchend', function (e) {
-      if (e.changedTouches && e.changedTouches[0]) {
-        touchEndX = e.changedTouches[0].screenX;
-        const threshold = 40;
-        if (touchEndX < touchStartX - threshold) {
-          goToSlide(currentIndex + 1);
-        } else if (touchEndX > touchStartX + threshold) {
-          goToSlide(currentIndex - 1);
+        if (dotsContainer) {
+          Array.from(dotsContainer.children).forEach((dot, idx) => {
+            const isActive = idx === currentIndex;
+            dot.classList.toggle('active', isActive);
+            dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          });
         }
       }
-    }, { passive: true });
 
-    updateSlides();
+      function goToSlide(index) {
+        currentIndex = (index + cards.length) % cards.length;
+        updateSlides();
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          goToSlide(currentIndex - 1);
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          goToSlide(currentIndex + 1);
+        });
+      }
+
+      // Keyboard navigation
+      carousel.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft') {
+          goToSlide(currentIndex - 1);
+        } else if (e.key === 'ArrowRight') {
+          goToSlide(currentIndex + 1);
+        }
+      });
+
+      // Touch swipe support for mobile
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      carousel.addEventListener('touchstart', function (e) {
+        if (e.changedTouches && e.changedTouches[0]) {
+          touchStartX = e.changedTouches[0].screenX;
+        }
+      }, { passive: true });
+
+      carousel.addEventListener('touchend', function (e) {
+        if (e.changedTouches && e.changedTouches[0]) {
+          touchEndX = e.changedTouches[0].screenX;
+          const threshold = 40;
+          if (touchEndX < touchStartX - threshold) {
+            goToSlide(currentIndex + 1);
+          } else if (touchEndX > touchStartX + threshold) {
+            goToSlide(currentIndex - 1);
+          }
+        }
+      }, { passive: true });
+
+      updateSlides();
+    });
+  }
+
+  // --- Interactive Anxiety Regulation Slider (Resources Page) ---
+  function initAnxietySlider() {
+    const slider = document.getElementById('anxietyRangeSlider');
+    const display = document.getElementById('anxietyValueDisplay');
+    const pill = document.getElementById('zoneIndicatorPill');
+    const rangeText = document.getElementById('zoneScoreRange');
+    const msg = document.getElementById('zoneDynamicMessage');
+    const zoneGreen = document.getElementById('zone-green');
+    const zoneAmber = document.getElementById('zone-amber');
+    const zoneRed = document.getElementById('zone-red');
+
+    if (!slider) return;
+
+    function updateAnxietyState(val) {
+      const score = parseInt(val, 10);
+      if (display) display.textContent = `${score}/10`;
+
+      // Remove existing active states
+      [zoneGreen, zoneAmber, zoneRed].forEach(z => {
+        if (z) z.classList.remove('active-zone');
+      });
+
+      if (score <= 3) {
+        // Green Zone (0-3)
+        if (pill) {
+          pill.className = 'anxiety-zone-pill green';
+          pill.textContent = 'Green zone';
+        }
+        if (rangeText) rangeText.textContent = '(Score: 0–3)';
+        if (msg) msg.textContent = "I'm relatively okay. I have the capacity to engage.";
+        if (zoneGreen) zoneGreen.classList.add('active-zone');
+      } else if (score <= 8) {
+        // Amber Zone (4-8)
+        if (pill) {
+          pill.className = 'anxiety-zone-pill amber';
+          pill.textContent = 'Amber zone';
+        }
+        if (rangeText) rangeText.textContent = '(Score: 4–8)';
+        if (msg) msg.textContent = "Your anxiety is increasing. A pause may help before you engage further.";
+        if (zoneAmber) zoneAmber.classList.add('active-zone');
+      } else {
+        // Red Zone (9-10)
+        if (pill) {
+          pill.className = 'anxiety-zone-pill red';
+          pill.textContent = 'Red zone';
+        }
+        if (rangeText) rangeText.textContent = '(Score: 9–10)';
+        if (msg) msg.textContent = "I'm extremely overwhelmed. Regulation comes first.";
+        if (zoneRed) zoneRed.classList.add('active-zone');
+      }
+    }
+
+    slider.addEventListener('input', function () {
+      updateAnxietyState(this.value);
+    });
+
+    // Initialize with default value
+    updateAnxietyState(slider.value);
+  }
+
+  // --- Crisis Helplines Collapsible Toggle ---
+  function initCrisisToggle() {
+    const toggleBtn = document.getElementById('crisisToggleBtn');
+    const header = document.getElementById('crisisToggleHeader');
+    const content = document.getElementById('crisisHelplinesContent');
+
+    if (!toggleBtn || !content) return;
+
+    let isExpanded = true;
+    function toggle() {
+      isExpanded = !isExpanded;
+      content.style.display = isExpanded ? 'grid' : 'none';
+      toggleBtn.textContent = isExpanded ? 'Hide Helplines ↑' : 'Show Helplines ↓';
+      toggleBtn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+    }
+
+    toggleBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      toggle();
+    });
+
+    if (header) {
+      header.addEventListener('click', function (e) {
+        if (e.target.closest('a') || e.target.closest('button')) return;
+        toggle();
+      });
+    }
   }
 
   // --- Scroll Animations, Progress & Mobile Polish ---
@@ -796,6 +887,8 @@
     initLightbox();
     initNewsletterForm();
     initTestimonialSlider();
+    initAnxietySlider();
+    initCrisisToggle();
     initScrollExperience();
   });
 

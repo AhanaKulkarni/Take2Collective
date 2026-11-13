@@ -2930,6 +2930,7 @@ h4 { font-size: clamp(18px, 1.7vw, 24px); }
   .falling-leaf { display: none !important; }
   .cat-tail { animation: none !important; }
   .breath-circle { animation: none !important; }
+  .fairy-bulb-glass { animation: none !important; }
   .reveal-on-scroll,
   .reveal-stagger > * {
     opacity: 1 !important;
@@ -2937,4 +2938,612 @@ h4 { font-size: clamp(18px, 1.7vw, 24px); }
     transition: none !important;
   }
   *, *::before, *::after { transition-duration: 0.01ms !important; }
+}
+
+/* ==========================================================================
+   WARM & COZY SANCTUARY REFINEMENTS (DESIGN DIRECTION & FEEDBACK)
+   Fairy lights, botanical vines, arched cards, interactive anxiety kit,
+   emotion wheel, and responsive alignment.
+   ========================================================================== */
+
+/* --- FAIRY LIGHTS GARLAND --- */
+.fairy-lights-garland {
+  width: 100%;
+  height: 48px;
+  display: block;
+  pointer-events: none;
+  overflow: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.fairy-light-wire {
+  fill: none;
+  stroke: rgba(27, 69, 58, 0.35);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+}
+
+.fairy-bulb-glass {
+  fill: #FFE180;
+  filter: drop-shadow(0 0 6px rgba(245, 197, 66, 0.85));
+  animation: bulbTwinkle 3.5s infinite ease-in-out alternate;
+}
+
+.fairy-bulb:nth-child(2n) .fairy-bulb-glass {
+  animation-duration: 4.8s;
+  animation-delay: 0.7s;
+}
+
+.fairy-bulb:nth-child(3n) .fairy-bulb-glass {
+  animation-duration: 3.2s;
+  animation-delay: 1.3s;
+}
+
+@keyframes bulbTwinkle {
+  0% { filter: drop-shadow(0 0 4px rgba(245, 197, 66, 0.6)); opacity: 0.85; }
+  50% { filter: drop-shadow(0 0 9px rgba(255, 225, 90, 0.95)); opacity: 1; }
+  100% { filter: drop-shadow(0 0 5px rgba(245, 197, 66, 0.75)); opacity: 0.9; }
+}
+
+.fairy-cap {
+  fill: #1B453A;
+}
+
+/* Botanical Corner Vines */
+.botanical-vine-corner {
+  position: absolute;
+  top: 0;
+  width: clamp(80px, 11vw, 140px);
+  pointer-events: none;
+  z-index: 9;
+  opacity: 0.9;
+}
+
+.botanical-vine-left {
+  left: 0;
+}
+
+.botanical-vine-right {
+  right: 0;
+  transform: scaleX(-1);
+}
+
+/* --- HERO 5 OFFERINGS STRIP --- */
+.hero-offerings-strip {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+  margin: 38px auto 0;
+  max-width: 1040px;
+  background: var(--sand-warm);
+  border: 1px solid rgba(27, 69, 58, 0.12);
+  border-radius: var(--radius-soft);
+  box-shadow: 0 4px 18px rgba(27, 69, 58, 0.04);
+  padding: 12px 18px;
+}
+
+.offering-strip-item {
+  flex: 1;
+  min-width: 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px 14px;
+  position: relative;
+  text-decoration: none;
+  color: var(--moss);
+  transition: var(--transition);
+}
+
+.offering-strip-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 15%;
+  bottom: 15%;
+  width: 1px;
+  background: rgba(27, 69, 58, 0.14);
+}
+
+.offering-strip-item:hover {
+  transform: translateY(-2px);
+  color: var(--terra);
+}
+
+.offering-strip-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--terra);
+  margin-bottom: 6px;
+}
+
+.offering-strip-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.offering-strip-title {
+  font-family: var(--sans);
+  font-size: 13.5px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* --- CONCERNS WE WORK WITH (5 ARCH CARDS) --- */
+.concerns-cards-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-top: 36px;
+}
+
+.concern-arch-card {
+  background: var(--sand-light);
+  border: 1px solid rgba(27, 69, 58, 0.12);
+  border-radius: 999px 999px 24px 24px;
+  padding: 24px 14px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: var(--transition);
+  box-shadow: 0 4px 16px rgba(27, 69, 58, 0.04);
+  cursor: pointer;
+  position: relative;
+}
+
+.concern-arch-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--glow-warm);
+  border-color: var(--terra);
+  background: #FCFAF4;
+}
+
+.concern-arch-illustration {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: var(--sand-warm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  color: var(--moss);
+  border: 1.5px solid rgba(27, 69, 58, 0.1);
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(27, 69, 58, 0.05);
+}
+
+.concern-arch-illustration svg {
+  width: 48px;
+  height: 48px;
+}
+
+.concern-arch-title {
+  font-family: var(--serif-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--moss);
+  margin: 0 0 14px;
+}
+
+.concern-bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: var(--sans);
+  font-size: 12.5px;
+  color: var(--ink);
+  line-height: 1.45;
+}
+
+.concern-bullet-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.concern-bullet-list li svg {
+  width: 14px;
+  height: 14px;
+  color: var(--terra);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* --- PROJECT HIGHLIGHT SHOWCASE (BHARATANATYAM & BOARDS) --- */
+.project-detailed-hero {
+  background: var(--sand-warm);
+  border: 1px solid rgba(27, 69, 58, 0.12);
+  border-radius: var(--radius-organic);
+  padding: clamp(26px, 4vw, 48px);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 48px;
+}
+
+.project-ways-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.project-way-card {
+  background: var(--sand-light);
+  border: 1px solid rgba(27, 69, 58, 0.1);
+  border-radius: var(--radius-soft);
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-way-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.project-way-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--sand-warm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--terra);
+  flex-shrink: 0;
+}
+
+.project-way-card h4 {
+  font-family: var(--serif-display);
+  font-size: 17px;
+  color: var(--moss);
+  margin: 0;
+}
+
+.project-way-card p {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--muted);
+  margin-bottom: 12px;
+  flex-grow: 1;
+}
+
+.project-way-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: auto;
+}
+
+.project-way-tag {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--moss);
+  background: rgba(223, 234, 214, 0.7);
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+}
+
+.project-offered-through-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  padding: 16px 20px;
+  background: var(--sand-light);
+  border-radius: 16px;
+  border: 1px solid rgba(27, 69, 58, 0.1);
+  margin-top: 20px;
+}
+
+.offered-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--sans);
+  font-size: 12.5px;
+  color: var(--ink);
+}
+
+.offered-item svg {
+  width: 20px;
+  height: 20px;
+  color: var(--terra);
+  flex-shrink: 0;
+}
+
+/* Beyond the Boards 6 Arch Cards */
+.project-boards-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 14px;
+  margin-top: 26px;
+}
+
+.board-arch-card {
+  background: var(--sand-light);
+  border: 1px solid rgba(27, 69, 58, 0.1);
+  border-radius: 999px 999px 20px 20px;
+  padding: 20px 12px 18px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.board-arch-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--sand-warm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--terra);
+  margin-bottom: 12px;
+}
+
+.board-arch-icon svg {
+  width: 36px;
+  height: 36px;
+}
+
+.board-arch-card h4 {
+  font-family: var(--serif-display);
+  font-size: 15px;
+  color: var(--moss);
+  margin: 0 0 6px;
+  line-height: 1.25;
+}
+
+.board-arch-card p {
+  font-family: var(--sans);
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* --- CRISIS SUPPORT & EMOTION WHEEL & ANXIETY KIT (RESOURCES) --- */
+.crisis-support-box {
+  background: #FCFAF4;
+  border: 1.5px solid var(--terra);
+  border-radius: var(--radius-soft);
+  padding: clamp(22px, 3.5vw, 36px);
+  margin-bottom: 36px;
+  box-shadow: 0 6px 20px rgba(184, 111, 88, 0.08);
+}
+
+.helpline-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.helpline-card {
+  background: var(--sand);
+  border: 1px solid rgba(27, 69, 58, 0.12);
+  border-radius: 16px;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.helpline-card h4 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  color: var(--moss);
+}
+
+.helpline-card p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.helpline-call-btn {
+  background: var(--terra);
+  color: #FFFFFF !important;
+  text-decoration: none;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.helpline-call-btn:hover {
+  background: var(--moss);
+}
+
+.emotion-wheel-card {
+  background: var(--sand-light);
+  border: 1px solid rgba(27, 69, 58, 0.14);
+  border-radius: var(--radius-soft);
+  padding: clamp(24px, 4vw, 40px);
+  text-align: center;
+  margin: 32px auto;
+  max-width: 900px;
+  box-shadow: 0 8px 24px rgba(27, 69, 58, 0.05);
+}
+
+.emotion-wheel-img-wrapper {
+  max-width: 520px;
+  margin: 24px auto;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 10px 32px rgba(27, 69, 58, 0.12);
+  border: 4px solid var(--sand);
+}
+
+/* Anxiety Kit Slider & Zones */
+.anxiety-slider-box {
+  background: var(--sand-light);
+  border: 1px solid rgba(27, 69, 58, 0.14);
+  border-radius: var(--radius-soft);
+  padding: clamp(24px, 4vw, 38px);
+  margin: 28px 0;
+  box-shadow: 0 6px 22px rgba(27, 69, 58, 0.04);
+}
+
+.anxiety-score-display {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.anxiety-score-num {
+  font-family: var(--serif-display);
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--moss);
+  line-height: 1;
+}
+
+.anxiety-range-slider {
+  width: 100%;
+  height: 12px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #A8C69F 0%, #E3A857 50%, #C46D5E 100%);
+  outline: none;
+  margin: 20px 0 10px;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+.anxiety-range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 3px solid var(--moss);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+.anxiety-zone-pill {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.anxiety-zone-pill.green { background: #DFEAD6; color: #1B453A; }
+.anxiety-zone-pill.amber { background: #FDE8CD; color: #9B5D13; }
+.anxiety-zone-pill.red { background: #F9D5CE; color: #9A2C18; }
+
+.anxiety-zone-card {
+  background: var(--sand-light);
+  border: 1px solid rgba(27, 69, 58, 0.12);
+  border-radius: var(--radius-soft);
+  margin-bottom: 22px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(27, 69, 58, 0.04);
+}
+
+.anxiety-zone-header {
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(27, 69, 58, 0.08);
+}
+
+.anxiety-zone-body {
+  padding: 24px;
+}
+
+.anxiety-reminder-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.reminder-card-item {
+  border-radius: 18px;
+  padding: 22px;
+  border: 1px solid rgba(27, 69, 58, 0.08);
+}
+
+.reminder-card-item.tint-green { background: #F3F8F0; }
+.reminder-card-item.tint-amber { background: #FAF5EB; }
+.reminder-card-item.tint-terra { background: #FAF0ED; }
+.reminder-card-item.tint-sage { background: #EDF4E7; }
+
+/* Responsive adjustments for new components */
+@media (max-width: 1040px) {
+  .concerns-cards-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .project-boards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .project-offered-through-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .concerns-cards-row {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin-inline: auto;
+  }
+  .concern-arch-card {
+    border-radius: 40px;
+  }
+  .project-ways-grid {
+    grid-template-columns: 1fr;
+  }
+  .project-boards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .helpline-grid {
+    grid-template-columns: 1fr;
+  }
+  .anxiety-reminder-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-offerings-strip {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .offering-strip-item:not(:last-child)::after {
+    display: none;
+  }
+  .offering-strip-item {
+    border-bottom: 1px solid rgba(27, 69, 58, 0.08);
+  }
 }
