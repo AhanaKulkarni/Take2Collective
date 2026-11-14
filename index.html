@@ -7,7 +7,7 @@
   <title>Take2 Collective — Creating spaces for intentional living</title>
   <meta name="description" content="Take2 Collective brings together ideas, practices, people and projects exploring what it means to navigate, understand and build a wholesome adult life.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='17' fill='%231D443C'/%3E%3Cpath d='M13 42c8-13 16-21 25-22 8-1 13 3 13 9 0 8-9 13-21 16' fill='none' stroke='%23F8F5EB' stroke-width='6' stroke-linecap='round'/%3E%3Ccircle cx='45' cy='17' r='5' fill='%23D6A33B'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=2.3">
 </head>
 <body>
   <!-- Top Reading / Flow Progress Indicator -->
@@ -59,7 +59,7 @@
 
   <main id="main">
     <!-- Hero Section: Creating spaces for intentional living -->
-    <section class="home-hero" aria-labelledby="hero-title" style="position: relative; overflow: hidden; padding-top: clamp(48px, 6vw, 76px); padding-bottom: clamp(36px, 5vw, 64px);">
+    <section class="home-hero-cozy" aria-labelledby="hero-title">
       <!-- Overhead Fairy Lights Garland -->
       <svg class="fairy-lights-garland" viewBox="0 0 1200 48" preserveAspectRatio="none" aria-hidden="true">
         <defs>
@@ -97,53 +97,25 @@
         <path d="M18,165 Q35,160 38,175 Q25,180 18,165 Z" fill="#6D8B74" opacity="0.75"/>
       </svg>
 
-      <div class="wrap home-hero-grid" style="align-items: center; position: relative; z-index: 2;">
-        <div class="home-hero-copy reveal-on-scroll">
-          <div class="hero-kicker" style="margin-bottom: 12px;">
-            <span class="hero-kicker-badge" style="background: rgba(223, 234, 214, 0.7); color: var(--moss); font-weight: 700;">
-              Take2 Collective
-            </span>
-          </div>
+      <div class="wrap" style="max-width: 1120px; position: relative; z-index: 2;">
+        <!-- Mandatory Line from Client Brief -->
+        <p class="hero-tagline-bar reveal-on-scroll">
+          Therapy, shared spaces and thoughtful projects for navigating adult life with more awareness.
+        </p>
 
-          <h1 id="hero-title" style="margin-bottom: 6px; font-size: clamp(38px, 4.4vw, 62px); letter-spacing: -0.03em;">
-            Take <span style="color: var(--terra); font-style: italic;">2</span> Collective
-          </h1>
-
-          <p style="font-family: var(--serif-display); font-style: italic; font-size: clamp(22px, 2.5vw, 32px); color: var(--moss); margin: 0 0 16px; font-weight: 500;">
-            Enabling Intentional Living
-          </p>
-
-          <p class="hero-premise" style="font-size: clamp(16.5px, 1.5vw, 19.5px); color: var(--ink); line-height: 1.6; margin-bottom: 14px; font-weight: 500;">
-            Therapy, shared spaces and thoughtful projects for navigating adult life with more awareness.
-          </p>
-
-          <div style="display: inline-flex; align-items: center; gap: 8px; font-family: var(--sans); font-size: 13.5px; color: var(--terra); background: rgba(184, 111, 88, 0.08); padding: 6px 16px; border-radius: var(--radius-pill); margin-bottom: 22px;">
-            <span aria-hidden="true">&#9670;</span>
-            <span>Psychological Support rooted in awareness, agency and overall wellbeing</span>
-            <span aria-hidden="true">&#9670;</span>
-          </div>
-
-          <div class="button-row">
-            <a class="button button-primary" href="#what-we-offer">
-              Explore Our Offerings &rarr;
-            </a>
-            <a class="button button-outline" href="therapy.html">
-              Individual Counselling
+        <!-- Grand Centered Cozy Corner Watercolor Showcase (Exact Mockup) -->
+        <div class="hero-mockup-stage reveal-on-scroll">
+          <div class="hero-artwork-wrapper">
+            <img src="hero-watercolor-hd.png" alt="Take 2 Collective - Enabling Intentional Living. A warm sunlit room with wooden armchairs, trailing plants, coffee and books" class="hero-artwork-img" width="2000" height="811">
+            <!-- Clickable hotspot on 'Explore Our Offerings ->' button -->
+            <a href="#what-we-offer" class="hero-explore-hotspot" aria-label="Explore Our Offerings">
+              <span class="sr-only">Explore Our Offerings</span>
             </a>
           </div>
         </div>
 
-        <!-- Cozy Sanctuary Corner Stage -->
-        <div class="hero-sanctuary-stage reveal-on-scroll reveal-slide-right">
-          <figure style="margin: 0; position: relative; border-radius: var(--radius-soft); overflow: hidden; box-shadow: 0 12px 36px rgba(27, 69, 58, 0.1);">
-            <img src="reflection-nook.png" alt="A soothing, sunlit room with comfortable wooden chairs, indoor plants, warm lamps and books" width="1200" height="800">
-          </figure>
-        </div>
-      </div>
-
-      <!-- 5 Offerings Quick Strip (Directly Under Hero) -->
-      <div class="wrap reveal-on-scroll" style="position: relative; z-index: 2;">
-        <nav class="hero-offerings-strip" aria-label="Quick offerings navigation">
+        <!-- 5 Offerings Quick Strip (Directly Under Hero) -->
+        <nav class="hero-offerings-strip reveal-on-scroll" aria-label="Take2 Core Offerings">
           <a class="offering-strip-item" href="therapy.html">
             <div class="offering-strip-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -155,7 +127,7 @@
             <span class="offering-strip-title">Individual Counselling</span>
           </a>
 
-          <a class="offering-strip-item" href="workshops.html">
+          <a class="offering-strip-item" href="projects.html">
             <div class="offering-strip-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
@@ -167,22 +139,24 @@
             <span class="offering-strip-title">Groups &amp; Workshops</span>
           </a>
 
-          <a class="offering-strip-item" href="projects.html#bharatanatyam">
+          <a class="offering-strip-item" href="projects.html#project-dance">
             <div class="offering-strip-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="m4.93 4.93 4.24 4.24M14.83 9.17l4.24-4.24M14.83 14.83l4.24 4.24M9.17 14.83l-4.24 4.24"/>
+                <path d="M12 4c-2 4-5 8-5 12 2 2 5 2 5 2s3 0 5-2c0-4-3-8-5-12z"/>
+                <path d="M7 16c-3-2-5-5-5-8 3-1 6 1 7 4"/>
+                <path d="M17 16c3-2 5-5 5-8-3-1-6 1-7 4"/>
               </svg>
             </div>
             <span class="offering-strip-title">Movement &amp; Wellbeing</span>
           </a>
 
-          <a class="offering-strip-item" href="projects.html">
+          <a class="offering-strip-item" href="projects.html#project-boards">
             <div class="offering-strip-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1"/>
-                <path d="M18 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-4"/>
-                <circle cx="8" cy="12" r="2"/>
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                <line x1="9" y1="9" x2="9.01" y2="9"/>
+                <line x1="15" y1="9" x2="15.01" y2="9"/>
               </svg>
             </div>
             <span class="offering-strip-title">Community Projects</span>
@@ -815,6 +789,6 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=2.3"></script>
 </body>
 </html>
