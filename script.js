@@ -11,10 +11,13 @@
     mr: {
       // Navigation
       'nav.home': 'मुख्यपृष्ठ',
+      'nav.about': 'संस्थापकाबद्दल',
+      'nav.offerings': 'सेवा व अनुभव',
       'nav.therapy': 'थेरपी',
+      'nav.aspirants': 'अ‍ॅस्परंट्स',
       'nav.projects': 'प्रकल्प',
       'nav.resources': 'संसाधने',
-      'nav.connect': 'संपर्क',
+      'nav.contact': 'संपर्क',
       'nav.cta': 'संवाद साधा',
       'lang.toggle': 'English',
 
@@ -34,7 +37,7 @@
       // Philosophy
       'manifesto.title': 'टेक २ दृष्टिकोन (तत्त्वज्ञान)',
       'manifesto.lead': 'आयुष्य समजून घेणे ही एका वेळेची प्रक्रिया नाही. आपण वाढतो, परिस्थिती बदलते. <em>टेक २ म्हणजे शून्यातून सुरुवात करणे नव्हे, तर अधिक जाणीवेने पुढे चालू ठेवणे.</em>',
-      'manifesto.desc': 'हे आपोआप (automatically) जगणे आणि जाणीवपूर्वक (intentionally) जगणे यामधील अंतर आहे — विचार करण्यासाठी, शिकण्यासाठी, जोडण्यासाठी आणि निवडण्यासाठी एक हक्काची जागा.',
+      'manifesto.desc': 'हे आपोआप (automatically) जगणे आणि जाणीवपूर्वक (intentionally) जगणे यामधील अंतर आहे: विचार करण्यासाठी, शिकण्यासाठी, जोडण्यासाठी आणि निवडण्यासाठी एक हक्काची जागा.',
 
       // Offers
       'offers.eyebrow': 'टेक २ काय ऑफर करते',
@@ -58,7 +61,7 @@
       'adulting.01.q': 'मी खरं तर कसा/कशी आहे?',
       'adulting.01.desc': 'तणाव, चिंता, बर्नआउट, भावनांचा अतिरेक, आणि अपराधीपणाशिवाय विश्रांती घेणे.',
       'adulting.02.name': 'स्व-ओळख व मूल्ये',
-      'adulting.02.q': 'मी कोण आहे — आणि मी काय बनत आहे?',
+      'adulting.02.q': 'मी कोण आहे, आणि मी काय बनत आहे?',
       'adulting.02.desc': 'आत्मसन्मान, आत्मविश्वास, समाजाच्या अपेक्षा आणि स्वतःची मूल्ये समजून घेणे.',
       'adulting.03.name': 'नातेसंबंध व संवाद',
       'adulting.03.q': 'माझे स्वतःशी आणि इतरांशी नाते कसे आहे?',
@@ -92,11 +95,14 @@
     en: {
       // Navigation
       'nav.home': 'Home',
+      'nav.about': 'About',
+      'nav.offerings': 'Offerings',
       'nav.therapy': 'Therapy',
+      'nav.aspirants': 'Aspirants',
       'nav.projects': 'Projects',
       'nav.resources': 'Resources',
-      'nav.connect': 'Connect',
-      'nav.cta': 'Connect',
+      'nav.contact': 'Contact',
+      'nav.cta': 'Get in Touch',
       'lang.toggle': 'मराठी',
 
       // Hero
@@ -115,7 +121,7 @@
       // Philosophy
       'manifesto.title': 'The Take Two Approach (Philosophy)',
       'manifesto.lead': 'Figuring life out isn’t a one-time process. We grow. Life changes around us. <em>A Take Two isn’t about starting over. It’s about continuing with greater awareness.</em>',
-      'manifesto.desc': 'It’s the space between living automatically and living intentionally — a space to reflect, learn, connect, experiment and choose how we want to live.',
+      'manifesto.desc': 'It’s the space between living automatically and living intentionally: a space to reflect, learn, connect, experiment and choose how we want to live.',
 
       // Offers
       'offers.eyebrow': 'What Take2 Offers',
@@ -139,7 +145,7 @@
       'adulting.01.q': 'How am I actually doing?',
       'adulting.01.desc': 'Stress · Anxiety · Burnout · Emotional overwhelm · Self-care · Motivation · Performance · Rest.',
       'adulting.02.name': 'Identity',
-      'adulting.02.q': 'Who am I — and who am I becoming?',
+      'adulting.02.q': 'Who am I, and who am I becoming?',
       'adulting.02.desc': 'Self-worth · Confidence · Values · Beliefs · Purpose · Changing identities · Expectations.',
       'adulting.03.name': 'Relationships',
       'adulting.03.q': 'How do I relate to myself and others?',
@@ -182,7 +188,7 @@
       date: 'October 2026',
       content: `
         <p class="lead-drop">In an achievement-driven culture, pausing is often pathologized as laziness, avoidance, or lack of discipline. We treat rest as a reward that must be earned rather than an essential physiological prerequisite for functioning.</p>
-        <p>From a polyvagal and nervous system perspective, when the body detects chronic hyperarousal or perceived threat (deadlines, identity crises, comparison), it operates from sympathetic fight-or-flight or dorsal vagal shutdown. In these states, our prefrontal cortex—responsible for perspective, creativity, and conscious decision-making—goes offline.</p>
+        <p>From a polyvagal and nervous system perspective, when the body detects chronic hyperarousal or perceived threat (deadlines, identity crises, comparison), it operates from sympathetic fight-or-flight or dorsal vagal shutdown. In these states, our prefrontal cortex (responsible for perspective, creativity, and conscious decision-making) goes offline.</p>
         <h4>The Myth of Constant Forward Motion</h4>
         <p>When clients come to therapy feeling 'stuck', what they often need is not a harsher productivity regimen, but safe permission to orient to the present moment. Taking a pause is not quitting; it is an active deceleration that allows internal calibration.</p>
         <blockquote>"You cannot negotiate with an exhausted nervous system. Grounding must come before direction."</blockquote>
@@ -204,7 +210,7 @@
       content: `
         <p class="lead-drop">Booking a first therapy session is an act of vulnerability. Popular media often paints therapy as either an interrogation on a leather couch or an instant eureka moment. In reality, a first session is gentle, collaborative, and entirely paced by you.</p>
         <h4>The 15-Minute Groundwork</h4>
-        <p>Before any formal intake, we begin with a brief 15-minute introductory video call. This isn’t a therapy session—it is a two-way fit assessment. You get to feel my voice and tone, and I understand the broad contours of what brings you in.</p>
+        <p>Before any formal intake, we begin with a brief 15-minute introductory video call. This isn’t a therapy session: it is a two-way fit assessment. You get to feel my voice and tone, and I understand the broad contours of what brings you in.</p>
         <h4>Inside the 50-Minute First Meeting</h4>
         <p>When we sit down for session one, we don’t expect you to have an autobiography prepared. We typically explore:</p>
         <ul>
@@ -260,7 +266,7 @@
       content: `
         <p class="lead-drop">Whether preparing for UPSC, MPSC, CAT, or competitive postgraduate examinations, aspirants often exist in a state of suspended animation. While peers are getting promotions, moving cities, and celebrating social milestones, an aspirant's year is marked by 12-hour library days and silent isolation.</p>
         <h4>The Ambiguous Loss</h4>
-        <p>In psychology, 'ambiguous loss' refers to grief without a clear ending or societal ritual. When an exam cycle ends without a rank, there is no funeral, no certificate of effort—only the question from relatives: <em>"So, what is your next attempt?"</em></p>
+        <p>In psychology, 'ambiguous loss' refers to grief without a clear ending or societal ritual. When an exam cycle ends without a rank, there is no funeral, no certificate of effort: only the question from relatives: <em>"So, what is your next attempt?"</em></p>
         <h4>How Take2 × Aspirants Supports You:</h4>
         <p>In our dedicated aspirant circles and individual sessions, we don’t give superficial motivation talks. Instead, we create a space to:</p>
         <ul>
@@ -269,7 +275,7 @@
           <li>Establish non-negotiable mental health hygiene (movement, sunlight, social contact).</li>
           <li>Plan compassionate contingencies that preserve dignity and agency.</li>
         </ul>
-        <p>Remember: You are an adult living a rich, complex life who happens to be preparing for an exam—not an exam machine trying to simulate human life.</p>
+        <p>Remember: You are an adult living a rich, complex life who happens to be preparing for an exam, not an exam machine trying to simulate human life.</p>
       `
     },
     'aspirants-mock-scores': {
@@ -292,7 +298,7 @@
       readTime: '4 min read',
       date: 'September 2026',
       content: `
-        <p class="lead-drop">Many aspirants confuse 'not studying' with 'resting'. Lying in bed with an unread book on your lap while scrolling newsfeeds and berating yourself for wasting time is not rest—it is cognitive torture that keeps cortisol elevated.</p>
+        <p class="lead-drop">Many aspirants confuse 'not studying' with 'resting'. Lying in bed with an unread book on your lap while scrolling newsfeeds and berating yourself for wasting time is not rest: it is cognitive torture that keeps cortisol elevated.</p>
         <p>True restorative rest requires psychological safety. It is scheduled, intentional, and guilt-free. Our brains synthesize memory and consolidate complex conceptual connections during downtime and sleep.</p>
         <p>Protecting your sleep and scheduling half a day of genuine play each week is not lost study time; it is the fuel that allows high-order analytical retention.</p>
       `
@@ -304,8 +310,8 @@
       readTime: '5 min read',
       date: 'September 2026',
       content: `
-        <p class="lead-drop">The common myth is that complete ascetic renunciation—cutting off all friendships, music, hobbies, and family celebrations—is the only path to competitive exam success. In our clinical work with aspirants, we see that extreme deprivation leads to brittle resilience.</p>
-        <p>When your entire emotional ecosystem rests on a single pillar (the exam), any slight tremor in that pillar causes existential crisis. When you maintain small anchors in everyday life—a weekly walk with a trusted friend, listening to music, cooking a favorite meal—you create psychological shock absorbers.</p>
+        <p class="lead-drop">The common myth is that complete ascetic renunciation (cutting off all friendships, music, hobbies, and family celebrations) is the only path to competitive exam success. In our clinical work with aspirants, we see that extreme deprivation leads to brittle resilience.</p>
+        <p>When your entire emotional ecosystem rests on a single pillar (the exam), any slight tremor in that pillar causes existential crisis. When you maintain small anchors in everyday life (a weekly walk with a trusted friend, listening to music, cooking a favorite meal), you create psychological shock absorbers.</p>
         <p>Take2 offers specialized sliding-scale fee structures for competitive exam aspirants (₹800–₹1000) because we believe mental healthcare during this demanding chapter is an essential right, not a luxury.</p>
       `
     },
@@ -585,6 +591,78 @@
     });
   }
 
+  // --- Contact Form Submission & Validation (connect.html) ---
+  function initContactForm() {
+    const form = document.getElementById('take2ContactForm');
+    const feedback = document.getElementById('contactFormFeedback');
+    if (!form || !feedback) return;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const nameInput = form.querySelector('#contactName');
+      const emailInput = form.querySelector('#contactEmail');
+      const topicInput = form.querySelector('#contactTopic');
+      const messageInput = form.querySelector('#contactMessage');
+
+      const name = nameInput ? nameInput.value.trim() : '';
+      const email = emailInput ? emailInput.value.trim() : '';
+      const topic = topicInput ? topicInput.value : '';
+      const message = messageInput ? messageInput.value.trim() : '';
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!name || name.length < 2) {
+        feedback.className = 'contact-form-feedback error';
+        feedback.textContent = currentLang === 'mr'
+          ? 'कृपया आपले नाव प्रविष्ट करा (किमान २ अक्षरे).'
+          : 'Please enter your name (at least 2 characters).';
+        feedback.style.display = 'block';
+        if (nameInput) nameInput.focus();
+        return;
+      }
+
+      if (!email || !emailRegex.test(email)) {
+        feedback.className = 'contact-form-feedback error';
+        feedback.textContent = currentLang === 'mr'
+          ? 'कृपया एक वैध ईमेल पत्ता प्रविष्ट करा.'
+          : 'Please enter a valid email address.';
+        feedback.style.display = 'block';
+        if (emailInput) emailInput.focus();
+        return;
+      }
+
+      if (!topic) {
+        feedback.className = 'contact-form-feedback error';
+        feedback.textContent = currentLang === 'mr'
+          ? 'कृपया विषयाची निवड करा.'
+          : 'Please select an area of interest from the dropdown.';
+        feedback.style.display = 'block';
+        if (topicInput) topicInput.focus();
+        return;
+      }
+
+      if (!message || message.length < 10) {
+        feedback.className = 'contact-form-feedback error';
+        feedback.textContent = currentLang === 'mr'
+          ? 'कृपया किमान १० अक्षरांचा संदेश लिहा.'
+          : 'Please share a brief note or context (at least 10 characters).';
+        feedback.style.display = 'block';
+        if (messageInput) messageInput.focus();
+        return;
+      }
+
+      // Success state
+      feedback.className = 'contact-form-feedback success';
+      feedback.textContent = currentLang === 'mr'
+        ? 'धन्यवाद! आपला संदेश प्राप्त झाला आहे. प्रचिती २४ ते ४८ तासांत आपल्याशी संपर्क साधेल.'
+        : 'Thank you for reaching out! Your message has been received with care. Prachiti typically responds within 24-48 business hours.';
+      feedback.style.display = 'block';
+
+      form.reset();
+    });
+  }
+
   // --- Testimonial Arrow Slider ---
   function initTestimonialSlider() {
     const carousels = document.querySelectorAll('.testimonial-carousel');
@@ -718,7 +796,7 @@
           pill.className = 'anxiety-zone-pill green';
           pill.textContent = 'Green zone';
         }
-        if (rangeText) rangeText.textContent = '(Score: 0–3)';
+        if (rangeText) rangeText.textContent = '(Score: 0 to 3)';
         if (msg) msg.textContent = "I'm relatively okay. I have the capacity to engage.";
         if (zoneGreen) zoneGreen.classList.add('active-zone');
       } else if (score <= 8) {
@@ -727,7 +805,7 @@
           pill.className = 'anxiety-zone-pill amber';
           pill.textContent = 'Amber zone';
         }
-        if (rangeText) rangeText.textContent = '(Score: 4–8)';
+        if (rangeText) rangeText.textContent = '(Score: 4 to 8)';
         if (msg) msg.textContent = "Your anxiety is increasing. A pause may help before you engage further.";
         if (zoneAmber) zoneAmber.classList.add('active-zone');
       } else {
@@ -736,7 +814,7 @@
           pill.className = 'anxiety-zone-pill red';
           pill.textContent = 'Red zone';
         }
-        if (rangeText) rangeText.textContent = '(Score: 9–10)';
+        if (rangeText) rangeText.textContent = '(Score: 9 to 10)';
         if (msg) msg.textContent = "I'm extremely overwhelmed. Regulation comes first.";
         if (zoneRed) zoneRed.classList.add('active-zone');
       }
@@ -881,11 +959,11 @@
       setLanguage(currentLang);
     }
 
-    initHeroSpaceSwitcher();
     initRegulationToolkit();
     initArticleModal();
     initLightbox();
     initNewsletterForm();
+    initContactForm();
     initTestimonialSlider();
     initAnxietySlider();
     initCrisisToggle();

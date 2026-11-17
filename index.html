@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#1A463B">
-  <title>Take2 Collective — Creating spaces for intentional living</title>
+  <title>Take2 Collective | Creating spaces for intentional living</title>
   <meta name="description" content="Take2 Collective brings together ideas, practices, people and projects exploring what it means to navigate, understand and build a wholesome adult life.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='17' fill='%231D443C'/%3E%3Cpath d='M13 42c8-13 16-21 25-22 8-1 13 3 13 9 0 8-9 13-21 16' fill='none' stroke='%23F8F5EB' stroke-width='6' stroke-linecap='round'/%3E%3Ccircle cx='45' cy='17' r='5' fill='%23D6A33B'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css?v=2.3">
+  <link rel="stylesheet" href="styles.css?v=2.5">
 </head>
 <body>
   <!-- Top Reading / Flow Progress Indicator -->
@@ -24,10 +24,12 @@
       
       <nav class="desktop-nav" aria-label="Main navigation">
         <a href="index.html" aria-current="page" data-i18n="nav.home">Home</a>
-        <a href="therapy.html" data-i18n="nav.therapy">Therapy</a>
+        <a href="#about-founder" data-i18n="nav.about">About</a>
+        <a href="therapy.html" data-i18n="nav.offerings">Offerings</a>
         <a href="aspirants.html" data-i18n="nav.aspirants">Aspirants</a>
         <a href="projects.html" data-i18n="nav.projects">Projects</a>
         <a href="resources.html" data-i18n="nav.resources">Resources</a>
+        <a href="connect.html" data-i18n="nav.contact">Contact</a>
       </nav>
 
       <div class="header-actions">
@@ -40,18 +42,20 @@
           </svg>
           <span class="lang-label">मराठी</span>
         </button>
-        <a class="nav-cta" href="connect.html" data-i18n="nav.cta">Connect</a>
+        <a class="nav-cta" href="connect.html" data-i18n="nav.cta">Get in Touch</a>
       </div>
 
       <details class="mobile-nav">
         <summary>Menu</summary>
         <nav aria-label="Mobile navigation">
           <a href="index.html" aria-current="page" data-i18n="nav.home">Home</a>
-          <a href="therapy.html" data-i18n="nav.therapy">Therapy</a>
+          <a href="#about-founder" data-i18n="nav.about">About</a>
+          <a href="therapy.html" data-i18n="nav.offerings">Offerings</a>
           <a href="aspirants.html" data-i18n="nav.aspirants">Aspirants</a>
           <a href="projects.html" data-i18n="nav.projects">Projects</a>
           <a href="resources.html" data-i18n="nav.resources">Resources</a>
-          <a href="connect.html" data-i18n="nav.connect">Connect</a>
+          <a href="connect.html" data-i18n="nav.contact">Contact</a>
+          <a class="mobile-cta-btn" href="connect.html">Get in Touch &rarr;</a>
         </nav>
       </details>
     </div>
@@ -103,6 +107,21 @@
           Therapy, shared spaces and thoughtful projects for navigating adult life with more awareness.
         </p>
 
+        <!-- Mobile Header (Visible on screens < 768px for readable, dominant typography) -->
+        <div class="hero-mobile-header reveal-on-scroll">
+          <h1 class="hero-brand-title" id="hero-title">
+            Take<span class="mark-two">2</span>Collective
+          </h1>
+          <p class="hero-tagline">Enabling Intentional Living</p>
+          <p class="hero-support-text">
+            Psychological support rooted in awareness, agency and overall wellbeing.
+          </p>
+          <div class="hero-mobile-buttons">
+            <a class="button button-primary" href="#what-we-offer">Explore Our Offerings &rarr;</a>
+            <a class="button button-outline" href="connect.html">Get in Touch</a>
+          </div>
+        </div>
+
         <!-- Grand Centered Cozy Corner Watercolor Showcase (Exact Mockup) -->
         <div class="hero-mockup-stage reveal-on-scroll">
           <div class="hero-artwork-wrapper">
@@ -112,6 +131,16 @@
               <span class="sr-only">Explore Our Offerings</span>
             </a>
           </div>
+        </div>
+
+        <!-- Desktop Action Buttons Row under Artwork -->
+        <div class="hero-desktop-actions-row reveal-on-scroll">
+          <a class="button button-primary" href="#what-we-offer">
+            Explore Our Offerings <span aria-hidden="true">&rarr;</span>
+          </a>
+          <a class="button button-outline" href="connect.html">
+            Get in Touch
+          </a>
         </div>
 
         <!-- 5 Offerings Quick Strip (Directly Under Hero) -->
@@ -150,7 +179,7 @@
             <span class="offering-strip-title">Movement &amp; Wellbeing</span>
           </a>
 
-          <a class="offering-strip-item" href="projects.html#project-boards">
+          <a class="offering-strip-item" href="aspirants.html">
             <div class="offering-strip-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10"/>
@@ -217,7 +246,7 @@
             <h2 id="offers-heading">
               Spaces, experiences and resources for navigating the many dimensions of adult life.
             </h2>
-            <p class="lead">Four ways to pause, connect and grow.</p>
+            <p class="lead">Five ways to pause, connect and grow.</p>
           </div>
           <figure class="house-stage">
             <img class="house-building" src="take2-house.png" alt="Illustrated Take2 building surrounded by plants" width="500" height="420" loading="lazy">
@@ -225,8 +254,8 @@
           </figure>
         </div>
 
-        <div class="offer-gallery reveal-stagger">
-          <!-- 01 Therapy -->
+        <div class="offerings-five-grid reveal-stagger">
+          <!-- 01 Individual Counselling -->
           <a class="offer-story therapy-story" href="therapy.html">
             <div class="offer-visual">
               <img src="therapy-illustration.png" alt="Two people in a comfortable conversation room" width="1581" height="995" loading="lazy">
@@ -234,54 +263,69 @@
             <div class="offer-story-copy">
               <span class="offer-index">01</span>
               <div>
-                <h3>Therapy</h3>
-                <p>Personal spaces for reflection, psychological support and growth.</p>
+                <h3>Individual Counselling</h3>
+                <p>Personal spaces for reflection, psychological support and self-understanding.</p>
               </div>
               <span class="story-arrow" aria-hidden="true">&rarr;</span>
             </div>
           </a>
 
-          <!-- 02 Workshops -->
-          <a class="offer-story workshop-story" href="workshops.html">
+          <!-- 02 Groups & Workshops -->
+          <a class="offer-story workshop-story" href="projects.html">
             <div class="offer-visual">
               <img src="offer-workshops.png" alt="A small group learning together in a supportive circle" width="1536" height="1024" loading="lazy">
             </div>
             <div class="offer-story-copy">
               <span class="offer-index">02</span>
               <div>
-                <h3>Workshops &amp; Group Spaces</h3>
-                <p>Shared spaces to learn, reflect, connect and explore.</p>
+                <h3>Groups &amp; Workshops</h3>
+                <p>Shared spaces to learn, reflect, connect and explore alongside others.</p>
               </div>
               <span class="story-arrow" aria-hidden="true">&rarr;</span>
             </div>
           </a>
 
-          <!-- 03 Projects -->
-          <a class="offer-story projects-story" href="projects.html">
+          <!-- 03 Movement & Wellbeing -->
+          <a class="offer-story movement-story" href="projects.html#project-dance">
             <div class="offer-visual">
-              <img src="offer-projects.png" alt="Person exploring ideas at a desk with plants and notes" width="1536" height="1024" loading="lazy">
+              <img src="project-dance.png" alt="Bharatanatyam and somatic movement exploration" width="780" height="504" loading="lazy">
             </div>
             <div class="offer-story-copy">
               <span class="offer-index">03</span>
               <div>
-                <h3>Projects &amp; Collaborations</h3>
-                <p>Exploring meaningful questions through psychology, research, creative practice and collaboration.</p>
+                <h3>Movement &amp; Wellbeing</h3>
+                <p>Connecting classical dance, rhythm and affective somatics for everyday regulation.</p>
               </div>
               <span class="story-arrow" aria-hidden="true">&rarr;</span>
             </div>
           </a>
 
-          <!-- 04 Resources -->
+          <!-- 04 Community Projects -->
+          <a class="offer-story community-story" href="aspirants.html">
+            <div class="offer-visual">
+              <img src="project-aspirants.png" alt="Student studying with focus and sustainable rhythm" width="780" height="504" loading="lazy">
+            </div>
+            <div class="offer-story-copy">
+              <span class="offer-index">04</span>
+              <div>
+                <h3>Community Projects</h3>
+                <p>Beyond the Boards, exam transitions and community dialogues grounded in lived reality.</p>
+              </div>
+              <span class="story-arrow" aria-hidden="true">&rarr;</span>
+            </div>
+          </a>
+
+          <!-- 05 Resources & Reflections -->
           <a class="offer-story resources-story" href="resources.html">
             <div class="offer-visual resources-visual">
               <img src="offer-resources.png" alt="Person reading quietly beside plants and a resting cat" width="1535" height="1025" loading="lazy">
               <img class="cat-tail" src="cat-tail.png" alt="" aria-hidden="true">
             </div>
             <div class="offer-story-copy">
-              <span class="offer-index">04</span>
+              <span class="offer-index">05</span>
               <div>
-                <h3>Conversations &amp; Resources</h3>
-                <p>Ideas, stories and perspectives to pause, think and look again.</p>
+                <h3>Resources &amp; Reflections</h3>
+                <p>Verified crisis helplines, the Emotion Wheel, and thoughtful essays to pause and return to.</p>
               </div>
               <span class="story-arrow" aria-hidden="true">&rarr;</span>
             </div>
@@ -291,7 +335,7 @@
     </section>
 
     <!-- SECTION 4: ABOUT THE FOUNDER -->
-    <section class="section founder-section" aria-labelledby="founder-title">
+    <section class="section founder-section" id="about-founder" aria-labelledby="founder-title">
       <div class="wrap founder reveal-on-scroll">
         <div class="founder-photo">
           <img src="prachiti.jpg" alt="Prachiti seated among plants in a warm, sunlit space" width="1280" height="1375" loading="lazy">
@@ -332,277 +376,6 @@
       </div>
     </section>
 
-    <!-- Testimonials Section: Arrow-Based Testimonial Box Slider -->
-    <section class="section testimonials-section" aria-labelledby="testimonials-title">
-      <div class="wrap">
-        <div class="centered-heading reveal-on-scroll">
-          <span class="eyebrow">Shared Experiences</span>
-          <h2 id="testimonials-title">Voices from the Take2 Community</h2>
-          <p>Reflections from therapy clients, workshop participants, exam aspirants, and collaborators (shared with consent &amp; anonymized).</p>
-        </div>
-
-        <div class="testimonial-slider-wrapper reveal-on-scroll">
-          <div class="testimonial-carousel" role="region" aria-label="Community Testimonials">
-            <!-- Testimonial 01 -->
-            <article class="testimonial-slide active" role="group" aria-roledescription="slide" aria-label="1 of 4">
-              <div class="testimonial-quote-mark" aria-hidden="true">&ldquo;</div>
-              <p class="testimonial-quote">
-                Prachiti’s space never felt clinical or intimidating. For the first time in years of high-pressure work, I felt permitted to unpack my anxiety and burnout without feeling broken. It is a genuine relief to be met with so much gentle warmth.
-              </p>
-              <div class="testimonial-author-row">
-                <span class="author-avatar-badge" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="8" r="4"/>
-                    <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
-                  </svg>
-                </span>
-                <div>
-                  <div class="author-name">Anonymous</div>
-                  <div class="author-context">Individual Therapy Client &bull; Tech Professional (Age 27)</div>
-                </div>
-              </div>
-            </article>
-
-            <!-- Testimonial 02 -->
-            <article class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="2 of 4">
-              <div class="testimonial-quote-mark" aria-hidden="true">&ldquo;</div>
-              <p class="testimonial-quote">
-                The Take2 × Aspirants space gave words to the lonely shame of gap years. It helped me rebuild a sustainable study rhythm while holding onto my self-worth beyond mock exam percentiles. The reduced fees made therapy genuinely accessible when I needed it most.
-              </p>
-              <div class="testimonial-author-row">
-                <span class="author-avatar-badge" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="8" r="4"/>
-                    <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
-                  </svg>
-                </span>
-                <div>
-                  <div class="author-name">Anonymous</div>
-                  <div class="author-context">Competitive Exam Aspirant &bull; UPSC Journey (Age 25)</div>
-                </div>
-              </div>
-            </article>
-
-            <!-- Testimonial 03 -->
-            <article class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="3 of 4">
-              <div class="testimonial-quote-mark" aria-hidden="true">&ldquo;</div>
-              <p class="testimonial-quote">
-                Connecting the discipline of abhinaya and rhythm with nervous system regulation changed how I relate to my body. Take2 created a safe room where psychological science and classical arts met seamlessly.
-              </p>
-              <div class="testimonial-author-row">
-                <span class="author-avatar-badge" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="8" r="4"/>
-                    <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
-                  </svg>
-                </span>
-                <div>
-                  <div class="author-name">Anonymous</div>
-                  <div class="author-context">Movement Workshop Participant &bull; Classical Dancer</div>
-                </div>
-              </div>
-            </article>
-
-            <!-- Testimonial 04 -->
-            <article class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="4 of 4">
-              <div class="testimonial-quote-mark" aria-hidden="true">&ldquo;</div>
-              <p class="testimonial-quote">
-                Prachiti brings a rare depth of lifespan grounding to young adult mental health. Her workshops in Mumbai colleges translate dense psychological frameworks into immediate, lived self-compassion for students.
-              </p>
-              <div class="testimonial-author-row">
-                <span class="author-avatar-badge" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="8" r="4"/>
-                    <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
-                  </svg>
-                </span>
-                <div>
-                  <div class="author-name">Anonymous</div>
-                  <div class="author-context">Higher Education Faculty &amp; Workshop Partner &bull; Mumbai</div>
-                </div>
-              </div>
-            </article>
-
-            <!-- Arrow Navigation Controls -->
-            <div class="testimonial-nav-bar">
-              <button type="button" class="carousel-arrow carousel-prev" aria-label="Previous testimonial">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="19" y1="12" x2="5" y2="12"></line>
-                  <polyline points="12 19 5 12 12 5"></polyline>
-                </svg>
-              </button>
-
-              <div class="carousel-progress-group">
-                <span class="carousel-counter" aria-live="polite">01 / 04</span>
-                <div class="carousel-dots" role="tablist" aria-label="Choose testimonial"></div>
-              </div>
-
-              <button type="button" class="carousel-arrow carousel-next" aria-label="Next testimonial">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Curated Blog Articles -->
-    <section class="section journal-section" aria-labelledby="journal-title">
-      <div class="wrap">
-        <div class="section-head reveal-on-scroll">
-          <div>
-            <span class="eyebrow">From the Take2 Journal</span>
-            <h2 id="journal-title">Curated Reads &amp; Reflections</h2>
-          </div>
-          <p class="lead" style="max-width: 440px;">
-            Short essays and practical reflections around therapy, exam journeys, movement, and adult transitions.
-          </p>
-        </div>
-
-        <div class="articles-grid reveal-stagger">
-          <article class="article-card reveal-on-scroll">
-            <div class="article-meta">
-              <span class="article-category">Therapy &amp; Somatics</span>
-              <span>4 min read</span>
-            </div>
-            <h3>De-stigmatizing the Pause: Why Nervous System Rest Precedes Action</h3>
-            <p>Why constantly pushing through exhaustion shuts down the prefrontal cortex, and how somatic deceleration restores agency.</p>
-            <button type="button" class="article-read-btn" data-open-article="pause-regulation">Read Article →</button>
-          </article>
-
-          <article class="article-card reveal-on-scroll">
-            <div class="article-meta">
-              <span class="article-category">Aspirants</span>
-              <span>5 min read</span>
-            </div>
-            <h3>The Silent Grief of the Exam Gap Year: Navigating Invisible Transitions</h3>
-            <p>Addressing ambiguous loss, library isolation, and decoupling your fundamental worth from exam marksheets.</p>
-            <button type="button" class="article-read-btn" data-open-article="aspirants-silent-grief">Read Article →</button>
-          </article>
-
-          <article class="article-card reveal-on-scroll">
-            <div class="article-meta">
-              <span class="article-category">Relationships</span>
-              <span>4 min read</span>
-            </div>
-            <h3>When Boundaries Feel Like Guilt: Relearning Emotional Safety</h3>
-            <p>Navigating family conditioning and shifting from defensive walls to gentle doors in adult relationships.</p>
-            <button type="button" class="article-read-btn" data-open-article="boundaries-guilt">Read Article →</button>
-          </article>
-
-          <article class="article-card reveal-on-scroll">
-            <div class="article-meta">
-              <span class="article-category">Dance &amp; Somatics</span>
-              <span>4 min read</span>
-            </div>
-            <h3>Rhythm, Mudras &amp; Grounding: The Science of Expressive Movement</h3>
-            <p>How the physical architecture of Bharatanatyam functions as a powerful somatic regulator for everyday emotional stress.</p>
-            <button type="button" class="article-read-btn" data-open-article="bharatanatyam-somatics">Read Article →</button>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Collaborations Section -->
-    <section class="section collaborations-section" aria-labelledby="collab-title">
-      <div class="wrap">
-        <div class="centered-heading reveal-on-scroll">
-          <span class="eyebrow">Our Network</span>
-          <h2 id="collab-title">Collaborations &amp; Partnerships</h2>
-          <p>
-            Take2 partners with academic institutions, arts organizations, healthcare practitioners, and community study circles.
-          </p>
-        </div>
-
-        <div class="collaborations-grid reveal-stagger">
-          <div class="collab-card reveal-on-scroll">
-            <div class="collab-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
-              </svg>
-            </div>
-            <div>
-              <h3>Academic Institutions</h3>
-              <p>Lifespan counselling research, youth workshops, and student wellbeing dialogues (St. Xavier’s College, Mumbai alumni roots).</p>
-            </div>
-          </div>
-
-          <div class="collab-card reveal-on-scroll">
-            <div class="collab-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="4" r="2"/>
-                <path d="m15 8-3 5-3-5"/>
-                <path d="M6 16l6-3 6 3"/>
-                <path d="m9 20 3-4 3 4"/>
-              </svg>
-            </div>
-            <div>
-              <h3>Classical Arts Academies</h3>
-              <p>Experiential somatic workshops integrating classical Bharatanatyam, rhythm, and emotion processing for performers.</p>
-            </div>
-          </div>
-
-          <div class="collab-card reveal-on-scroll">
-            <div class="collab-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-5.04z"/>
-                <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-5.04z"/>
-              </svg>
-            </div>
-            <div>
-              <h3>Neurophysiotherapy Clinics</h3>
-              <p>Take2 × Brain Health: Interdisciplinary workshops on cognitive agility and movement longevity for adults aged 45–60.</p>
-            </div>
-          </div>
-
-          <div class="collab-card reveal-on-scroll">
-            <div class="collab-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-              </svg>
-            </div>
-            <div>
-              <h3>Aspirant Communities</h3>
-              <p>Mentorship and mental health circles for civil services, postgrad entrance, and competitive examination candidates.</p>
-            </div>
-          </div>
-
-          <div class="collab-card reveal-on-scroll">
-            <div class="collab-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 21h18M5 21V7l7-4 7 4v14M9 10h1M14 10h1M9 14h1M14 14h1M9 18h1M14 18h1"/>
-              </svg>
-            </div>
-            <div>
-              <h3>Schools &amp; Youth Collectives</h3>
-              <p>Bhasha &amp; Beyond: Psychoeducation exploring language diversity, academic confidence, and self-worth for teenagers.</p>
-            </div>
-          </div>
-
-          <div class="collab-card reveal-on-scroll">
-            <div class="collab-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="18" cy="5" r="3"/>
-                <circle cx="6" cy="12" r="3"/>
-                <circle cx="18" cy="19" r="3"/>
-                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
-                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
-              </svg>
-            </div>
-            <div>
-              <h3>Community Circles</h3>
-              <p>Open group spaces, guided reflective journaling, and collaborative dialogues with grassroot mental health workers.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Bilingual Newsletter Signup -->
     <section class="section newsletter-section" aria-labelledby="newsletter-title">
       <div class="wrap">
@@ -613,7 +386,7 @@
             A gentle pause delivered directly to your inbox. Choose your preferred language edition and areas of interest.
           </p>
 
-          <form class="take2-newsletter-form" action="#" method="POST">
+          <form class="take2-newsletter-form" method="POST">
             <div class="newsletter-options-group">
               <span class="options-title">1. Choose your language edition:</span>
               <div class="edition-radio-row">
@@ -723,13 +496,37 @@
       </div>
     </section>
 
-    <!-- Closing Callout -->
-    <section class="section closing-section">
-      <div class="wrap closing-inner reveal-on-scroll">
+    <!-- Closing Callout (Warm Space with Fairy Lights) -->
+    <section class="section closing-section" style="position: relative; overflow: hidden; background: var(--bg-secondary); border-top: 1px solid var(--line);">
+      <!-- Overhead Fairy Lights Garland -->
+      <svg class="fairy-lights-garland" viewBox="0 0 1200 48" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <radialGradient id="closingBulbGlow" cx="50%" cy="40%" r="50%">
+            <stop offset="0%" stop-color="#FFF9D2" />
+            <stop offset="45%" stop-color="#FFE180" />
+            <stop offset="100%" stop-color="#E29E2E" />
+          </radialGradient>
+        </defs>
+        <path class="fairy-light-wire" d="M0,12 Q150,38 300,16 Q450,40 600,16 Q750,40 900,16 Q1050,38 1200,12" />
+        <g class="fairy-bulb" transform="translate(150, 36)"><rect class="fairy-cap" x="-3" y="-3" width="6" height="5" rx="1.5"/><circle class="fairy-bulb-glass" cx="0" cy="7" r="6.5"/></g>
+        <g class="fairy-bulb" transform="translate(300, 16)"><rect class="fairy-cap" x="-3" y="-3" width="6" height="5" rx="1.5"/><circle class="fairy-bulb-glass" cx="0" cy="7" r="6.5"/></g>
+        <g class="fairy-bulb" transform="translate(450, 38)"><rect class="fairy-cap" x="-3" y="-3" width="6" height="5" rx="1.5"/><circle class="fairy-bulb-glass" cx="0" cy="7" r="6.5"/></g>
+        <g class="fairy-bulb" transform="translate(600, 16)"><rect class="fairy-cap" x="-3" y="-3" width="6" height="5" rx="1.5"/><circle class="fairy-bulb-glass" cx="0" cy="7" r="6.5"/></g>
+        <g class="fairy-bulb" transform="translate(750, 38)"><rect class="fairy-cap" x="-3" y="-3" width="6" height="5" rx="1.5"/><circle class="fairy-bulb-glass" cx="0" cy="7" r="6.5"/></g>
+        <g class="fairy-bulb" transform="translate(900, 16)"><rect class="fairy-cap" x="-3" y="-3" width="6" height="5" rx="1.5"/><circle class="fairy-bulb-glass" cx="0" cy="7" r="6.5"/></g>
+        <g class="fairy-bulb" transform="translate(1050, 36)"><rect class="fairy-cap" x="-3" y="-3" width="6" height="5" rx="1.5"/><circle class="fairy-bulb-glass" cx="0" cy="7" r="6.5"/></g>
+      </svg>
+
+      <div class="wrap closing-inner reveal-on-scroll" style="position: relative; z-index: 2; padding: clamp(48px, 6vw, 76px) 0; text-align: center;">
         <span class="eyebrow">Begin where you are</span>
-        <h2>You don’t need to have everything figured out.</h2>
-        <a class="button button-primary" href="connect.html">
-          Book your introductory session <span aria-hidden="true">→</span>
+        <h2 style="font-size: clamp(30px, 4vw, 48px); margin: 12px 0 16px; line-height: 1.25;">
+          Sometimes, all it takes is a little space to begin again.
+        </h2>
+        <p style="font-size: 15.5px; color: var(--muted); max-width: 580px; margin: 0 auto 26px; line-height: 1.65;">
+          Whether through therapy, a group circle, or simply pausing to explore our resources, you don’t need to have everything figured out to take the next step.
+        </p>
+        <a class="button button-primary" href="connect.html" style="font-size: 15.5px; padding: 13px 32px;">
+          Let's Connect <span aria-hidden="true">&rarr;</span>
         </a>
       </div>
     </section>
@@ -746,7 +543,8 @@
 
         <div class="footer-links">
           <strong>Explore</strong>
-          <a href="therapy.html">Therapy</a>
+          <a href="therapy.html">Offerings</a>
+          <a href="aspirants.html">Aspirants</a>
           <a href="projects.html">Projects</a>
           <a href="resources.html">Resources</a>
         </div>
@@ -789,6 +587,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=2.3"></script>
+  <script src="script.js?v=2.5"></script>
 </body>
 </html>

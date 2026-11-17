@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#1A463B">
-  <title>Connect — Take2 Collective</title>
+  <title>Connect | Take2 Collective</title>
   <meta name="description" content="Begin a therapy inquiry, propose a collaboration, subscribe to newsletters, or connect with Prachiti and Take2 Collective.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='17' fill='%23606C38'/%3E%3Cpath d='M13 42c8-13 16-21 25-22 8-1 13 3 13 9 0 8-9 13-21 16' fill='none' stroke='%23E8DCC7' stroke-width='6' stroke-linecap='round'/%3E%3Ccircle cx='45' cy='17' r='5' fill='%23C66B3D'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css?v=2.3">
+  <link rel="stylesheet" href="styles.css?v=2.5">
 </head>
 <body>
   <!-- Top Reading / Flow Progress Indicator -->
@@ -24,10 +24,12 @@
       
       <nav class="desktop-nav" aria-label="Main navigation">
         <a href="index.html" data-i18n="nav.home">Home</a>
-        <a href="therapy.html" data-i18n="nav.therapy">Therapy</a>
+        <a href="index.html#about-founder" data-i18n="nav.about">About</a>
+        <a href="therapy.html" data-i18n="nav.offerings">Offerings</a>
         <a href="aspirants.html" data-i18n="nav.aspirants">Aspirants</a>
         <a href="projects.html" data-i18n="nav.projects">Projects</a>
         <a href="resources.html" data-i18n="nav.resources">Resources</a>
+        <a href="connect.html" aria-current="page" data-i18n="nav.contact">Contact</a>
       </nav>
 
       <div class="header-actions">
@@ -39,18 +41,20 @@
           </svg>
           <span class="lang-label">मराठी</span>
         </button>
-        <a class="nav-cta" href="connect.html" aria-current="page" data-i18n="nav.cta">Connect</a>
+        <a class="nav-cta" href="connect.html" data-i18n="nav.cta">Get in Touch</a>
       </div>
 
       <details class="mobile-nav">
         <summary>Menu</summary>
         <nav aria-label="Mobile navigation">
           <a href="index.html" data-i18n="nav.home">Home</a>
-          <a href="therapy.html" data-i18n="nav.therapy">Therapy</a>
+          <a href="index.html#about-founder" data-i18n="nav.about">About</a>
+          <a href="therapy.html" data-i18n="nav.offerings">Offerings</a>
           <a href="aspirants.html" data-i18n="nav.aspirants">Aspirants</a>
           <a href="projects.html" data-i18n="nav.projects">Projects</a>
           <a href="resources.html" data-i18n="nav.resources">Resources</a>
-          <a href="connect.html" aria-current="page" data-i18n="nav.connect">Connect</a>
+          <a href="connect.html" aria-current="page" data-i18n="nav.contact">Contact</a>
+          <a class="mobile-cta-btn" href="connect.html">Get in Touch &rarr;</a>
         </nav>
       </details>
     </div>
@@ -108,21 +112,72 @@
         </article>
 
         <!-- Follow on Instagram -->
-        <article class="contact-card wide" style="background: #F4EFE3;">
+        <article class="contact-card wide" style="background: var(--bg-secondary);">
           <span class="small-label">Updates &amp; Group Spaces</span>
           <h2>Want to know what’s coming up?</h2>
           <p>
             Follow Take2 for regular updates on workshops, group spaces, projects and collaborations.
           </p>
           <a class="button button-primary" href="https://instagram.com" target="_blank" rel="noopener noreferrer" style="margin-top: 14px;">
-            Follow on Instagram →
+            Follow on Instagram &rarr;
           </a>
         </article>
       </div>
     </section>
 
+    <!-- Direct Inquiry / Message Form -->
+    <section class="contact-form-section" id="message-form">
+      <div class="wrap">
+        <div class="centered-heading reveal-on-scroll">
+          <span class="eyebrow">Send a Message</span>
+          <h2>Drop a Note to Take2</h2>
+          <p>
+            Whether you have questions about sessions, are interested in bringing a workshop to your community, or simply want to introduce yourself, write to us below.
+          </p>
+        </div>
+
+        <div class="contact-form-card reveal-on-scroll">
+          <form class="take2-contact-form" id="take2ContactForm" novalidate>
+            <div class="form-group">
+              <label for="contactName">Your Name *</label>
+              <input type="text" id="contactName" name="name" placeholder="How should we address you?" required aria-required="true">
+            </div>
+
+            <div class="form-group">
+              <label for="contactEmail">Email Address *</label>
+              <input type="email" id="contactEmail" name="email" placeholder="Where can we write back to you?" required aria-required="true">
+            </div>
+
+            <div class="form-group">
+              <label for="contactTopic">What brings you here? *</label>
+              <select id="contactTopic" name="topic" required aria-required="true">
+                <option value="" disabled selected>Select an area of interest...</option>
+                <option value="therapy">Individual Counselling &amp; Therapy</option>
+                <option value="aspirants">Take2 &times; Aspirants (Exam Prep &amp; Transitions)</option>
+                <option value="dance">Bharatanatyam for Mental Health</option>
+                <option value="boards">Beyond the Boards (Schools &amp; Parents)</option>
+                <option value="brain">Brain Health &times; Mental Health</option>
+                <option value="collaboration">General Collaboration / Inquiries</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="contactMessage">Your Message *</label>
+              <textarea id="contactMessage" name="message" placeholder="Share a little context or whatever feels relevant right now..." required aria-required="true"></textarea>
+            </div>
+
+            <button type="submit" class="contact-submit-btn">
+              Send Message &rarr;
+            </button>
+
+            <div class="contact-form-feedback" id="contactFormFeedback" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
     <!-- Social Media Community Hub -->
-    <section class="section social-hub-section" style="background: #EDF3E7; border-block: 1px solid var(--line);">
+    <section class="section social-hub-section" style="background: var(--bg-secondary); border-block: 1px solid var(--line);">
       <div class="wrap">
         <div class="centered-heading">
           <span class="eyebrow">Community &amp; Social Spaces</span>
@@ -194,7 +249,7 @@
             Ideas, reflections, resources and updates from Take2. Choose your preferred language edition and areas of interest.
           </p>
 
-          <form class="take2-newsletter-form" action="#" method="POST">
+          <form class="take2-newsletter-form" method="POST">
             <div class="newsletter-options-group">
               <span class="options-title">1. Choose your language edition:</span>
               <div class="edition-radio-row">
@@ -283,6 +338,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=2.3"></script>
+  <script src="script.js?v=2.5"></script>
 </body>
 </html>
