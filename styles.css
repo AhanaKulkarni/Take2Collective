@@ -675,6 +675,19 @@ h4 { font-size: clamp(18px, 1.7vw, 24px); }
   }
 }
 
+.floor-lantern-svg path[d*="M55,75"] {
+  transform-origin: 55px 75px;
+  animation: candleFlicker 2.4s ease-in-out infinite alternate;
+}
+
+@keyframes candleFlicker {
+  0% { transform: scale(1) rotate(-1deg); opacity: 0.9; }
+  25% { transform: scale(1.06, 0.95) rotate(1.2deg); opacity: 1; }
+  50% { transform: scale(0.96, 1.04) rotate(-0.8deg); opacity: 0.85; }
+  75% { transform: scale(1.04, 1.02) rotate(1.5deg); opacity: 0.95; }
+  100% { transform: scale(1) rotate(0deg); opacity: 0.9; }
+}
+
 /* --- Center Editorial Content --- */
 .hero-center-content {
   display: flex;
@@ -3375,10 +3388,10 @@ h4 { font-size: clamp(18px, 1.7vw, 24px); }
    emotion wheel, and responsive alignment.
    ========================================================================== */
 
-/* --- FAIRY LIGHTS GARLAND --- */
+/* --- FAIRY LIGHTS & BOTANICAL GARLAND (ORGANIC GOLDEN GLOW & MULTI-PHASE TWINKLE) --- */
 .fairy-lights-garland {
   width: 100%;
-  height: 48px;
+  height: clamp(34px, 4.5vw, 56px);
   display: block;
   pointer-events: none;
   overflow: visible;
@@ -3391,38 +3404,120 @@ h4 { font-size: clamp(18px, 1.7vw, 24px); }
 
 .fairy-light-wire {
   fill: none;
-  stroke: rgba(27, 69, 58, 0.35);
-  stroke-width: 1.4;
+  stroke: rgba(72, 86, 56, 0.38);
+  stroke-width: 1.5;
   stroke-linecap: round;
 }
 
 .fairy-bulb-glass {
   fill: #FFE180;
-  filter: drop-shadow(0 0 6px rgba(245, 197, 66, 0.85));
-  animation: bulbTwinkle 3.5s infinite ease-in-out alternate;
+  filter: drop-shadow(0 0 5px rgba(255, 235, 140, 0.9)) drop-shadow(0 0 12px rgba(214, 173, 84, 0.6));
+  animation: bulbTwinkle1 3.4s infinite ease-in-out alternate;
+  transform-origin: 0 7px;
 }
 
 .fairy-bulb:nth-child(2n) .fairy-bulb-glass {
-  animation-duration: 4.8s;
-  animation-delay: 0.7s;
+  animation-name: bulbTwinkle2;
+  animation-duration: 4.2s;
+  animation-delay: 0.6s;
 }
 
 .fairy-bulb:nth-child(3n) .fairy-bulb-glass {
-  animation-duration: 3.2s;
+  animation-name: bulbTwinkle3;
+  animation-duration: 2.9s;
   animation-delay: 1.3s;
 }
 
-@keyframes bulbTwinkle {
-  0% { filter: drop-shadow(0 0 4px rgba(245, 197, 66, 0.6)); opacity: 0.85; }
-  50% { filter: drop-shadow(0 0 9px rgba(255, 225, 90, 0.95)); opacity: 1; }
-  100% { filter: drop-shadow(0 0 5px rgba(245, 197, 66, 0.75)); opacity: 0.9; }
+.fairy-bulb:nth-child(4n) .fairy-bulb-glass {
+  animation-name: bulbTwinkle4;
+  animation-duration: 4.8s;
+  animation-delay: 0.3s;
+}
+
+.fairy-bulb:nth-child(5n) .fairy-bulb-glass {
+  animation-name: bulbTwinkle1;
+  animation-duration: 3.7s;
+  animation-delay: 2.1s;
+}
+
+@keyframes bulbTwinkle1 {
+  0% {
+    filter: drop-shadow(0 0 4px rgba(245, 197, 66, 0.65)) drop-shadow(0 0 8px rgba(214, 173, 84, 0.35));
+    opacity: 0.82;
+    transform: scale(0.96);
+  }
+  50% {
+    filter: drop-shadow(0 0 8px rgba(255, 245, 180, 0.95)) drop-shadow(0 0 16px rgba(214, 173, 84, 0.7));
+    opacity: 1;
+    transform: scale(1.04);
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(245, 197, 66, 0.7)) drop-shadow(0 0 10px rgba(214, 173, 84, 0.45));
+    opacity: 0.88;
+    transform: scale(0.98);
+  }
+}
+
+@keyframes bulbTwinkle2 {
+  0% {
+    filter: drop-shadow(0 0 7px rgba(255, 235, 140, 0.9)) drop-shadow(0 0 14px rgba(214, 173, 84, 0.55));
+    opacity: 1;
+    transform: scale(1.03);
+  }
+  50% {
+    filter: drop-shadow(0 0 3px rgba(245, 197, 66, 0.55)) drop-shadow(0 0 6px rgba(214, 173, 84, 0.3));
+    opacity: 0.78;
+    transform: scale(0.94);
+  }
+  100% {
+    filter: drop-shadow(0 0 6px rgba(255, 230, 130, 0.85)) drop-shadow(0 0 12px rgba(214, 173, 84, 0.5));
+    opacity: 0.94;
+    transform: scale(1.01);
+  }
+}
+
+@keyframes bulbTwinkle3 {
+  0% {
+    filter: drop-shadow(0 0 4px rgba(245, 197, 66, 0.65));
+    opacity: 0.85;
+    transform: scale(0.97);
+  }
+  60% {
+    filter: drop-shadow(0 0 9px rgba(255, 250, 190, 0.98)) drop-shadow(0 0 18px rgba(214, 173, 84, 0.75));
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    filter: drop-shadow(0 0 4px rgba(245, 197, 66, 0.65));
+    opacity: 0.85;
+    transform: scale(0.97);
+  }
+}
+
+@keyframes bulbTwinkle4 {
+  0% {
+    filter: drop-shadow(0 0 6px rgba(255, 225, 90, 0.8));
+    opacity: 0.9;
+  }
+  40% {
+    filter: drop-shadow(0 0 3px rgba(245, 197, 66, 0.5));
+    opacity: 0.75;
+  }
+  80% {
+    filter: drop-shadow(0 0 10px rgba(255, 245, 180, 0.95)) drop-shadow(0 0 15px rgba(214, 173, 84, 0.65));
+    opacity: 1;
+  }
+  100% {
+    filter: drop-shadow(0 0 6px rgba(255, 225, 90, 0.8));
+    opacity: 0.9;
+  }
 }
 
 .fairy-cap {
-  fill: #1B453A;
+  fill: #485638;
 }
 
-/* Botanical Corner Vines */
+/* Botanical Corner Vines with Gentle Ambient Sway */
 .botanical-vine-corner {
   position: absolute;
   top: 0;
@@ -3430,15 +3525,50 @@ h4 { font-size: clamp(18px, 1.7vw, 24px); }
   pointer-events: none;
   z-index: 9;
   opacity: 0.9;
+  transition: opacity 0.5s ease;
 }
 
 .botanical-vine-left {
   left: 0;
+  transform-origin: 0 0;
+  animation: vineBreezeLeft 9s ease-in-out infinite alternate;
 }
 
 .botanical-vine-right {
   right: 0;
+  transform-origin: 100% 0;
   transform: scaleX(-1);
+  animation: vineBreezeRight 11s ease-in-out infinite alternate;
+}
+
+@keyframes vineBreezeLeft {
+  0% {
+    transform: rotate(0deg) skewX(0deg);
+  }
+  40% {
+    transform: rotate(1.4deg) skewX(0.8deg);
+  }
+  75% {
+    transform: rotate(-0.7deg) skewX(-0.4deg);
+  }
+  100% {
+    transform: rotate(0.9deg) skewX(0.5deg);
+  }
+}
+
+@keyframes vineBreezeRight {
+  0% {
+    transform: scaleX(-1) rotate(0deg) skewX(0deg);
+  }
+  35% {
+    transform: scaleX(-1) rotate(-1.5deg) skewX(-0.7deg);
+  }
+  70% {
+    transform: scaleX(-1) rotate(0.8deg) skewX(0.4deg);
+  }
+  100% {
+    transform: scaleX(-1) rotate(-1.1deg) skewX(-0.5deg);
+  }
 }
 
 /* --- HERO 5 OFFERINGS STRIP (Clean Flow, Unboxed per Mockup) --- */
@@ -4636,5 +4766,403 @@ h4 { font-size: clamp(18px, 1.7vw, 24px); }
   }
   .leaf-underline-flourish {
     width: 180px;
+  }
+}
+
+
+/* ==========================================================================
+   PROFESSIONAL EDITORIAL ANIMATION SYSTEM
+   Organic breathing room scene, fluid tactile micro-interactions,
+   slanted shadows, floating botanical particles, and graceful scroll reveals.
+   ========================================================================== */
+
+/* --- 1. Ambient Living Room Scene Elements --- */
+.sunlight-glow-overlay {
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  width: 140%;
+  height: 120%;
+  background: radial-gradient(ellipse at 30% 30%, rgba(255, 245, 200, 0.45) 0%, rgba(255, 230, 150, 0.2) 45%, transparent 75%);
+  pointer-events: none;
+  z-index: 1;
+  filter: blur(18px);
+  animation: sunlightBreathe 8s ease-in-out infinite alternate;
+}
+
+@keyframes sunlightBreathe {
+  0% {
+    opacity: 0.65;
+    transform: scale(0.96) translate(0, 0);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.04) translate(3px, 2px);
+  }
+  100% {
+    opacity: 0.72;
+    transform: scale(0.98) translate(-1px, 1px);
+  }
+}
+
+.window-floor-plant-svg {
+  transform-origin: bottom center;
+  animation: plantBreathe 9s ease-in-out infinite alternate;
+}
+
+@keyframes plantBreathe {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(0.9deg) scale(1.015);
+  }
+  100% {
+    transform: rotate(-0.6deg) scale(0.995);
+  }
+}
+
+.floating-shelf-svg path[d*="M178,72"],
+.floating-shelf-svg path[d*="M185,72"] {
+  transform-origin: 180px 72px;
+  animation: pothosSway 8s ease-in-out infinite alternate;
+}
+
+@keyframes pothosSway {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(1.8deg);
+  }
+  100% {
+    transform: rotate(-1.2deg);
+  }
+}
+
+.tea-steam-wisp {
+  animation: steamDrift 3s ease-out infinite;
+}
+
+.steam-2 {
+  animation-delay: 1.5s;
+}
+
+@keyframes steamDrift {
+  0% {
+    transform: translateY(0) scaleX(1);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.65;
+  }
+  50% {
+    transform: translateY(-8px) scaleX(1.2) translateX(3px);
+    opacity: 0.45;
+  }
+  80% {
+    opacity: 0.15;
+  }
+  100% {
+    transform: translateY(-16px) scaleX(0.8) translateX(-3px);
+    opacity: 0;
+  }
+}
+
+.mark-two-brush .brush-stroke-svg {
+  animation: brushstrokeBloom 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes brushstrokeBloom {
+  0% {
+    opacity: 0;
+    transform: scale(0.65) rotate(-6deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.leaf-underline-flourish {
+  animation: flourishDraw 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
+}
+
+@keyframes flourishDraw {
+  0% {
+    opacity: 0;
+    transform: scaleX(0.85);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+/* --- 2. Header & Navigation Micro-Interactions --- */
+.site-header {
+  transition: background-color 0.35s ease, box-shadow 0.35s ease, backdrop-filter 0.35s ease;
+}
+
+.site-header.is-scrolled {
+  background: rgba(248, 242, 232, 0.94);
+  box-shadow: 0 4px 20px rgba(56, 39, 31, 0.06);
+  backdrop-filter: blur(10px);
+}
+
+.nav-links a {
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--terra);
+  border-radius: 1px;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateX(-50%);
+}
+
+.nav-links a:hover::after,
+.nav-links a[aria-current="page"]::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: var(--terra);
+}
+
+/* --- 3. Interactive Tactile Buttons --- */
+.button {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.25s ease,
+              color 0.25s ease,
+              border-color 0.25s ease;
+}
+
+.button-primary,
+.hero-main-cta,
+.nav-cta {
+  background: var(--olive);
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(104, 116, 73, 0.28);
+}
+
+.button-primary:hover,
+.hero-main-cta:hover,
+.nav-cta:hover {
+  background: var(--forest);
+  transform: translateY(-2.5px) scale(1.015);
+  box-shadow: 0 8px 24px rgba(72, 86, 56, 0.32), 0 2px 6px rgba(104, 116, 73, 0.2);
+}
+
+.button-primary:active,
+.hero-main-cta:active,
+.nav-cta:active {
+  transform: translateY(0.5px) scale(0.99);
+  box-shadow: 0 2px 8px rgba(72, 86, 56, 0.25);
+}
+
+.button-outline,
+.hero-secondary-cta {
+  border: 1.5px solid var(--forest);
+  color: var(--forest) !important;
+  background: transparent;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.button-outline:hover,
+.hero-secondary-cta:hover {
+  background: rgba(72, 86, 56, 0.08);
+  border-color: var(--forest);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(72, 86, 56, 0.12);
+}
+
+.button-outline:active,
+.hero-secondary-cta:active {
+  transform: translateY(0.5px);
+}
+
+/* --- 4. 5 Offerings Quick Strip Elevation --- */
+.offering-strip-item {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+}
+
+.offering-strip-item:hover {
+  transform: translateY(-3.5px);
+  color: var(--terra);
+}
+
+.offering-strip-item:hover .offering-strip-icon svg {
+  transform: translateY(-2px) scale(1.14);
+  color: var(--terra);
+}
+
+.offering-strip-icon svg {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+}
+
+/* --- 5. Interactive Cards Hover Physics --- */
+.offer-story {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease;
+}
+
+.offer-story:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 18px 38px rgba(72, 86, 56, 0.12), 0 4px 12px rgba(56, 39, 31, 0.06);
+  border-color: rgba(104, 116, 73, 0.35);
+}
+
+.offer-story .offer-visual img {
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.offer-story:hover .offer-visual img {
+  transform: scale(1.04);
+}
+
+.offer-story .story-link-btn .story-arrow {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+}
+
+.offer-story:hover .story-link-btn .story-arrow {
+  transform: translateX(6px);
+  color: var(--terra);
+}
+
+.manifesto-pill {
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.28s ease,
+              color 0.28s ease,
+              box-shadow 0.28s ease,
+              letter-spacing 0.28s ease;
+}
+
+.manifesto-pill:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: var(--forest);
+  color: #FFFFFF;
+  box-shadow: 0 6px 16px rgba(72, 86, 56, 0.25);
+  letter-spacing: 0.08em;
+}
+
+.project-preview-card {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease;
+}
+
+.project-preview-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(72, 86, 56, 0.14);
+  border-color: var(--olive);
+}
+
+.project-preview-visual img {
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-preview-card:hover .project-preview-visual img {
+  transform: scale(1.045);
+}
+
+.project-preview-body .text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.25s ease, gap 0.25s ease;
+}
+
+.project-preview-card:hover .project-preview-body .text-link {
+  color: var(--terra);
+  gap: 8px;
+}
+
+.resource-preview-card {
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease;
+}
+
+.resource-preview-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 32px rgba(72, 86, 56, 0.12);
+  border-color: var(--olive);
+}
+
+.resource-card-icon {
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.resource-preview-card:hover .resource-card-icon {
+  transform: scale(1.1);
+  background: var(--forest);
+  color: #FFFFFF;
+}
+
+.resource-action-link,
+.article-read-btn {
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.resource-preview-card:hover .resource-action-link,
+.resource-preview-card:hover .article-read-btn {
+  color: var(--terra);
+  transform: translateX(4px);
+}
+
+.founder-photo {
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.founder-photo:hover {
+  transform: translateY(-4px) rotate(-0.5deg);
+}
+
+.founder-photo img {
+  transition: box-shadow 0.4s ease;
+}
+
+.founder-photo:hover img {
+  box-shadow: 0 18px 40px rgba(56, 39, 31, 0.14);
+}
+
+/* --- 6. Ambient Floating Botanical Canvas Overlay --- */
+#botanicalDriftCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 98;
+  opacity: 0.6;
+}
+
+/* --- 7. Reduced Motion Support --- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  #botanicalDriftCanvas {
+    display: none !important;
+  }
+  .fairy-bulb-glass {
+    filter: drop-shadow(0 0 6px rgba(245, 197, 66, 0.85)) !important;
+    opacity: 0.9 !important;
   }
 }

@@ -857,6 +857,139 @@
     }
   }
 
+  // --- Ambient Botanical Leaf Drift Canvas ---
+  function initBotanicalPetals() {
+    const canvas = document.getElementById('botanicalDriftCanvas');
+    if (!canvas) return;
+
+    // Respect user motion preferences
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      canvas.style.display = 'none';
+      return;
+    }
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let width = 0;
+    let height = 0;
+    let animationFrameId = null;
+    let isTabVisible = true;
+
+    function resize() {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+    }
+
+    resize();
+    window.addEventListener('resize', resize, { passive: true });
+
+    // Palette: soft sage, warm honey gold, muted terracotta, olive
+    const leafColors = [
+      { r: 217, g: 216, b: 185 }, // sage (#D9D8B9)
+      { r: 214, g: 173, b: 84 },  // honey gold (#D6AD54)
+      { r: 185, g: 121, b: 80 },  // terracotta (#B97950)
+      { r: 104, g: 116, b: 73 }   // olive (#687449)
+    ];
+
+    const leafCount = 8;
+    const leaves = [];
+
+    function createLeaf(initialY = false) {
+      const color = leafColors[Math.floor(Math.random() * leafColors.length)];
+      return {
+        x: Math.random() * width,
+        y: initialY ? Math.random() * height : -20 - Math.random() * 50,
+        size: 7 + Math.random() * 8, // 7 to 15px
+        speedY: 0.35 + Math.random() * 0.45, // gentle slow fall
+        speedX: (Math.random() - 0.5) * 0.3,
+        swayPhase: Math.random() * Math.PI * 2,
+        swaySpeed: 0.015 + Math.random() * 0.02,
+        swayAmplitude: 0.8 + Math.random() * 1.2,
+        rotation: Math.random() * Math.PI * 2,
+        rotSpeed: (Math.random() - 0.5) * 0.02,
+        opacity: 0.28 + Math.random() * 0.35,
+        color: color
+      };
+    }
+
+    for (let i = 0; i < leafCount; i++) {
+      leaves.push(createLeaf(true));
+    }
+
+    function drawLeaf(leaf) {
+      ctx.save();
+      ctx.translate(leaf.x, leaf.y);
+      ctx.rotate(leaf.rotation);
+
+      // Draw graceful organic leaf shape with curved bezier
+      ctx.beginPath();
+      const s = leaf.size;
+      ctx.moveTo(0, -s);
+      ctx.bezierCurveTo(s * 0.7, -s * 0.3, s * 0.7, s * 0.5, 0, s);
+      ctx.bezierCurveTo(-s * 0.7, s * 0.5, -s * 0.7, -s * 0.3, 0, -s);
+      ctx.fillStyle = `rgba(${leaf.color.r}, ${leaf.color.g}, ${leaf.color.b}, ${leaf.opacity})`;
+      ctx.fill();
+
+      // Delicate center vein
+      ctx.beginPath();
+      ctx.moveTo(0, -s * 0.85);
+      ctx.lineTo(0, s * 0.85);
+      ctx.strokeStyle = `rgba(${leaf.color.r - 20}, ${leaf.color.g - 20}, ${leaf.color.b - 20}, ${leaf.opacity * 0.7})`;
+      ctx.lineWidth = 0.75;
+      ctx.stroke();
+
+      ctx.restore();
+    }
+
+    function animate() {
+      if (!isTabVisible) return;
+
+      ctx.clearRect(0, 0, width, height);
+
+      for (let i = 0; i < leaves.length; i++) {
+        const leaf = leaves[i];
+        leaf.swayPhase += leaf.swaySpeed;
+        leaf.x += Math.sin(leaf.swayPhase) * leaf.swayAmplitude + leaf.speedX;
+        leaf.y += leaf.speedY;
+        leaf.rotation += leaf.rotSpeed;
+
+        // Wrap around horizontally if blown off edge
+        if (leaf.x < -30) leaf.x = width + 20;
+        if (leaf.x > width + 30) leaf.x = -20;
+
+        // Reset to top when drifting past bottom
+        if (leaf.y > height + 30) {
+          leaves[i] = createLeaf(false);
+        }
+
+        drawLeaf(leaf);
+      }
+
+      animationFrameId = window.requestAnimationFrame(animate);
+    }
+
+    // Auto-pause when tab is hidden to conserve battery and CPU
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) {
+        isTabVisible = false;
+        if (animationFrameId) {
+          window.cancelAnimationFrame(animationFrameId);
+          animationFrameId = null;
+        }
+      } else {
+        isTabVisible = true;
+        if (!animationFrameId) {
+          animationFrameId = window.requestAnimationFrame(animate);
+        }
+      }
+    });
+
+    animationFrameId = window.requestAnimationFrame(animate);
+  }
+
   // --- Scroll Animations, Progress & Mobile Polish ---
   function initScrollExperience() {
     const progressLine = document.getElementById('scrollProgressLine');
@@ -878,7 +1011,12 @@
       });
 
       document.querySelectorAll('.reveal-on-scroll, .reveal-stagger').forEach(el => {
-        revealObserver.observe(el);
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          el.classList.add('is-revealed');
+        } else {
+          revealObserver.observe(el);
+        }
       });
     } else {
       document.querySelectorAll('.reveal-on-scroll, .reveal-stagger').forEach(el => {
@@ -968,6 +1106,7 @@
     initAnxietySlider();
     initCrisisToggle();
     initScrollExperience();
+    initBotanicalPetals();
   });
 
 })();
